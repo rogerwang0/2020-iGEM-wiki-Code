@@ -1,0 +1,264 @@
+<!--************************************************************Text Page*********************************************************************-->
+<html>
+</head>
+<style>
+	.text-banner{
+		position: relative;
+		width: 100%;
+		height: 652px;
+		padding-bottom: 50px;
+		background-image:url(https://2020.igem.org/wiki/images/b/b0/T--NWU-CHINA-A--description_banner.png);
+		background-repeat: no-repeat;
+		background-size:100% auto;
+		background-position: center center;
+		background-color:rgb(251,252,255);
+	}
+	.banner-title{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 600px;
+		height: 4.5rem;
+		margin: -3rem 0 0 -300px;
+		text-align: center;
+		font-family:"a Atmospheric";
+		font-size: 4.5rem;
+		color: rgb(56, 50, 45);
+	}
+	.text-wrapper{
+		display:block;
+		margin: 0;
+		padding:80px 0 100px 0;
+		background-image: url(https://2020.igem.org/wiki/images/4/41/T--NWU-CHINA-A--description_bg.gif);
+		z-index:-1;
+	}
+	.text-sector{
+		position: relative;
+		margin: 0px 10% 0px 35%;
+		padding: 50px 50px 120px 50px;
+		font-size: 1.12rem !important;
+		box-shadow: 0 .3rem .5rem rgba(0,0,0,.15)!important;
+		z-index: 9999;
+	}
+	.text-bg{
+		position: absolute;
+		font-size: 1.12rem !important;
+		box-shadow: 0 .3rem .5rem rgba(0,0,0,.15)!important;
+		background-color: #8fd0f7;
+		opacity: 0.8;
+		z-index:1000;
+	}
+	.text-sector,p{
+		font-size: 1.125rem !important;
+		font-weight: 530 !important;
+	}
+	.sector-title{
+		font-size: 2rem;
+		font-weight: 1000;
+		color: ;
+	}
+	.title-indicator{
+		position: fixed;
+		top: 96px;
+		left: 8%;
+		width: 180px;
+		margin: 200px auto auto 0%;
+		padding: 15px 20px 15px 20px !important;
+		background-color: #fff;
+		box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+		border-radius: 7px;
+	}
+	.indicator-title{
+		display:block;
+		font-size: 0.875rem;
+		font-weight:330;
+		margin: 0;
+		padding: 10px 0 10px 16px;
+		cursor: pointer;
+		user-select: none;
+	}
+	.indicator-title-current{
+		font-size: 1.2rem;
+		font-weight: 600;
+		cursor: pointer;
+		user-select: none;
+		box-shadow: 0 .3rem .5rem rgba(0,0,0,.15)!important;
+	}
+	.indicator-banner-title{
+		margin-bottom:1.6rem;
+		padding-left: 5px;
+		font-size: 1.4rem;
+		font-weight: 800;
+		user-select: none;
+	}
+
+	.clearspace{
+		height: 300px;
+		width: 100%;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+        //top-banner高度设置
+        $(".text-banner").css("height", screenHeight - 96 + "px");
+		$(window).scroll(function(){//若选取body则会因高度为100%无法触发事件
+			//设置文字蒙版位置
+			tsYaxis=$(".text-sector").offset().top;
+			tsLeft=$(".text-sector").offset().left;
+			tsWidth=parseInt($(".text-sector").css("width"))+parseInt($(".text-sector").css("padding-left"))+parseInt($(".text-sector").css("padding-right"));
+			tsHeight=parseInt($(".text-sector").css("height"))+parseInt($(".text-sector").css("padding-top"))+parseInt($(".text-sector").css("padding-bottom"));
+			$(".text-bg").css("left",tsLeft+"px");
+			$(".text-bg").css("top",tsYaxis+"px");
+			$(".text-bg").css("width",tsWidth+"px");
+			$(".text-bg").css("height",tsHeight+"px");
+			console.log(tsYaxis);
+		});
+		//获取文档长度
+		htmlHeight=$("body").css("height").slice(0,4);
+		htmlHeight=parseInt(htmlHeight);
+		Yaxis= document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+		//产生侧边指示标题
+		title=$(".sector-title");
+		var titleContent=new Array(title.length);
+		var count1=1;
+		title.each(function(){
+			titleContent[count1]=$(this).text();//这里this是dom元素
+			count1++;
+		});
+		$(".title-indicator").append("<h1 class=\"indicator-banner-title\" >"+$(".banner-title").text()+"</h1>");
+		for(var i=1;i<=title.length;i++){
+			$(".title-indicator").append("<h1 class=\"indicator-title\" id=\"indicator-title"+i+"\" >"+titleContent[i]+"</h1>");
+		};
+
+
+		titleI=$(".indicator-title");
+		var viewState = new Array();
+		var titleYaxis =new Array();
+		var count2=1;
+		title.each(function(){
+			titleYaxis[count2] = parseInt(this.offsetTop);
+			count2++;
+		});
+
+		titleYaxis[count2]=htmlHeight;//此时count2已经加1
+		
+		//控制当前分区指示标题样式
+		$(window).scroll(function(){//若选取body则会因高度为100%无法触发事件
+			
+
+			var count3=1;
+			titleI.each(function(){
+				//$(this).css("font-size","1.2rem");
+				//$(this).css("color","#000");
+				$(this).css("box-shadow","");
+				$(this).css("background-color","transparent");
+				if(Yaxis+100>=titleYaxis[count3]){
+							if(Yaxis+100<titleYaxis[count3+1]){
+								//$(this).css("font-size","1.3rem");
+								//$(this).css("color","#bdc3c7");
+								$(this).css("box-shadow","0 .3rem .5rem rgba(0,0,0,.15)");
+								$(this).css("background-color","#aeeff8");
+							};
+						};
+				count3++;
+			});
+
+		});
+
+		//控制侧边指示栏位置
+
+
+		//初始化侧边栏位置
+		originLeftHeight=$(".title-indicator").offset().top;
+		tbYaxis = $(".text-banner").offset().top;
+		tbYaxis += parseInt($(".text-banner").css("height"));
+		$(".title-indicator").css("top",tbYaxis+"px");
+
+		//实时控制侧边栏位置
+		$(window).scroll(function(){//若选取.globalwrapper则会因高度为100%无法触发事件
+			Yaxis= document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+			tbYaxis = $(".text-banner").offset().top;
+			//csYaxis = $(".clearspace").offset().top;
+			twYaxis = $(".text-wrapper").offset().top;
+			twHeight = parseInt($(".text-wrapper").css("height"));
+			csYaxis = twHeight+twYaxis;
+			tiHeight = parseInt($(".title-indicator").css("height"));
+			tbHeight = parseInt($(".text-banner").css("height"));
+			tiYaixs = $(".title-indicator").offset().top;
+			//tbYaxis += tbHeight-Yaxis;
+			leftYaxis=$(".text-banner").css("top");
+			leftMargin=parseInt($(".title-indicator").css("margin-top"));
+			if(tbYaxis+tbHeight-Yaxis>=0){
+				$(".title-indicator").css("top",tbYaxis+tbHeight-Yaxis+"px");
+			}else if(Yaxis+tiHeight+leftMargin > csYaxis){//120是.title-indicator的margin-top值
+				$(".title-indicator").css("top",csYaxis-tiHeight-Yaxis-leftMargin+"px");
+			}else{
+				$(".title-indicator").css("top",0+"px");
+			};
+				//console.log(tiHeight+Yaxis+" "+csYaxis);
+			//console.log(tiYaixs+tiHeight);
+		});	
+
+		//top-banner高度设置
+		$(".top-banner").css("height",screenHeight-96+"px");
+
+		//背景图片位置控制
+		Yaxis= document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+		tbHeight = parseInt($(".text-banner").css("height"));
+		tbRatio=Yaxis*0.5-4+"px";
+		$(".text-banner").css("background-position","center "+tbRatio);
+		$(window).scroll(function(){//若选取.globalwrapper则会因高度为100%无法触发事件
+			Yaxis= document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+			tbHeight = parseInt($(".text-banner").css("height"));
+			tbRatio=Yaxis*0.5-4+"px";
+			$(".text-banner").css("background-position","center "+tbRatio);
+			//console.log("center "+tbRatio);
+		});
+
+
+		//点击跳转
+		var scrollTitle =function(e){
+			console.log(e.target);
+			var mark=$(e.target).attr("id").slice(15,16);
+			mark=parseInt(mark);
+			window.scrollTo({top:titleYaxis[mark]-95,behavior:"smooth"});	
+		};
+		
+		for(var i=1;i<=title.length;i++){
+			clickedTitle=$("#indicator-title"+i);
+			clickedTitle.on("click",function(e){scrollTitle(e);});
+		};
+	})
+</script>
+<div class="text-banner">
+	<span class="banner-title">Description</span>
+</div>
+<div class="text-wrapper">
+	<div class="title-indicator">
+	</div>
+	<div class="text-sector">
+
+		<h1 class="sector-title">HP Overview</h1>
+		<p>In iGEM, we are more likely to ignore a fact that our project needs to be used in the real world. As an important part of the competition, human practice makes our project much more complete and helps us test the practicality of our project. We believe that only the contribution of both experts and consumers makes our product perfect and benefits the whole world.</p>
+		<br>
+		<p>The human practice part of our project consists of thoughts of team members and suggestions of experts. Besides, we also have obtained some feedbacks of the public to make sure that our project fits the reality. At the same time, we popularized synthetic biology, so that people would have a deeper understanding of it. The most important part of our human practice is that we adjust our project according to the results of every human practice. There are a lot of problems to solve. Band-aids already have a relatively mature market now. What about the new type of band-aid we produced, will it have a market?</p>
+		<br>
+		<p>Can we bring it to market? Can it be accepted by consumers? How can we popularize it? Can it survive in the severe competitive environment? How can we ensure the advantages of our products in the market? In order to make sure that our products can satisfy more people, we decided to seek the advice of people from different industries in society, including doctors, professors, drug developers, marketing professionals, consumers, students, experts and the public, so as to learn more about how to improve our projects.</p>
+		
+		<h1 class="sector-title">交流会(描述，贡献，下一步)</h1>
+		<ul>
+			<li type="1">6.14 The 4th Southern China Regional Online Meeting</li>
+			<li type="1">7.11 Eastern China iGEM Meetup：</li>
+			<li type="1">7.25 Shaanxi iGEM Meetup：</li>
+			<li type="1">8.15 Friend Team Meetup：</li>
+			<li type="1">8.27-31 The 7th Conference of China iGEMer Meetup：</li>
+		</ul>
+	
+	</div>
+	<div class="text-bg"></div>
+</div>
+
+
+<!--网页占位部分-->
+<div class="clearspace"></div>
+</body>

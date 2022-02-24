@@ -1,0 +1,247 @@
+{{NWU-CHINA-A/default_CSS}}
+{{NWU-CHINA-A/style-basic}}
+<!--************************************************************Protocals Page*********************************************************************-->
+<html>
+</head>
+<style>
+.text-sector{
+	margin: 80px 10% 80px 35%;
+}
+.title-indicator{
+	position: fixed;
+	top: 96px;
+	margin: 80px auto auto 12%;
+}
+.indicator-title{
+	font-size: 1.2rem;
+	font-weight: 600;
+	cursor: pointer;
+	user-select: none;
+}
+
+.clearspace{
+	height: 400px;
+	width: 100%;
+}
+</style>
+<script type="text/javascript">
+	$(function(){
+		//获取文档长度
+		htmlHeight=$("body").css("height").slice(0,4);
+		htmlHeight=parseInt(htmlHeight);
+		Yaxis= document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+
+		//产生侧边指示标题
+		title=$(".sector-title");
+		var titleContent=new Array(title.length);
+		var count1=1;
+		title.each(function(){
+			titleContent[count1]=$(this).text();//这里this是dom元素
+			count1++;
+		})
+		for(var i=1;i<=title.length;i++){
+			$(".title-indicator").append("<h1 class=\"indicator-title\" id=\"indicator-title"+i+"\" >"+titleContent[i]+"</h1>");
+		};
+
+
+		titleI=$(".indicator-title");
+		var viewState = new Array();
+		var titleYaxis =new Array();
+		var count2=1;
+		title.each(function(){
+			titleYaxis[count2] = parseInt(this.offsetTop);
+			count2++;
+		});
+
+		titleYaxis[count2]=htmlHeight;//此时count2已经加1
+
+		$(window).scroll(function(){//若选取body则会因高度为100%无法触发事件
+			
+
+			var count3=1;
+			titleI.each(function(){
+				$(this).css("font-size","1.2rem");
+				$(this).css("color","#000");
+				if(Yaxis+.3*screenHeight>=titleYaxis[count3]){
+							if(Yaxis+.25*screenHeight<titleYaxis[count3+1]){
+								$(this).css("font-size","1.3rem");
+								$(this).css("color","#bdc3c7");
+							};
+						};
+				count3++;
+			});
+
+		});
+		//点击跳转
+		var scrollTitle =function(e){
+			console.log(e.target);
+			var mark=$(e.target).attr("id").slice(15,16);
+			mark=parseInt(mark);
+			window.scrollTo({top:titleYaxis[mark]-.3*screenHeight,behavior:"smooth"});	
+		};
+		
+		for(var i=1;i<=title.length;i++){
+			clickedTitle=$("#indicator-title"+i);
+			clickedTitle.on("click",function(e){scrollTitle(e);});
+			console.log(i);
+		};
+	})
+</script>
+<div class="text-banner">
+
+</div>
+<div class="title-indicator">
+
+</div>
+<div class="text-sector">
+
+    <h1>protocols</h1>
+    <p>1. LB - medium</p>
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Amount [g] for 200 mL</th>
+            <th>Amount [g] for 500 mL</th>
+            <th>Amount [g] for 1000 mL</th>
+        </tr>
+        <tr>
+            <th>Peptone</th>
+            <th>2</th>
+            <th>5</th>
+            <th>10</th>
+        </tr>
+        <tr>
+            <th>Yeast Extract</th>
+            <th>1</th>
+            <th>2.5</th>
+            <th>5</th>
+        </tr>
+        <tr>
+            <th>NaCl</th>
+            <th>2</th>
+            <th>5</th>
+            <th>10</th>
+        </tr>
+      </table>
+
+
+
+
+
+    <h1 class="sector-title">LAB protocols</h1>
+    <h2>Plasmid Construction</h2>
+    <p>As soon as our project was determined, we searched for target genes in a lot of literatures and finally found the sequences of DCD1L, HBD3, HD5, HD5d5, P5 and P6.2.</p>
+    <p>We synthesized target genes in Make Research Easy company. They helped us clone the target gene on the pet28a plasmid</p>
+    
+    <h3>1. PCR</h3>
+    <ul>
+        <li type="1">For a 20 µL reaction</li>
+        <li type="1">In a PCR tube on ice, combine 0.5 µL of template DNA, 1.0 µL of 10 µM forward primer,1.0 µLof 10 µM reverse primer to a PCR tube on ice, 10 µL of PrimeSTAR Max Premix(2X) and sterile water up to 20 µL.</li>
+        <li type="1">Gently mix the reaction</li>
+        <li type="1">Collect the liquid to the bottom of the PCR tube by centrifuging briefly</li>
+        <li type="1">Transfer the PCR tube from ice to a PCR machine preheated to 95°C to begin thermocycling</li>
+        <li type="1">Thermocycling:</li>
+        <li type="1">The PCR machine should be set to run the following steps:</li>
+    </ul>
+    <table border="1">
+        <tr>
+            <th>Step</th>
+            <th>Temperature(℃)</th>
+            <th>Time</th>
+        </tr>
+        <tr>
+            <th>Initial denaturation</th>
+            <th>95</th>
+            <th>3 minutes</th>
+        </tr>
+        <tr>
+            <th>30-40 cycles</th>
+            <th>95(denaturation)
+                Tm-5(annealing)
+                72(extension)
+                </th>
+            <th>30seconds
+                30seconds
+                20seconds per kb
+                </th>
+        </tr>
+        <tr>
+            <th>Final extension</th>
+            <th>72</th>
+            <th>10 minutes</th>
+        </tr>
+        <tr>
+            <th>Hold</th>
+            <th>12</th>
+            <th>indefinitely</th>
+        </tr>
+    </table>
+    <h3>2.Colony PCR</h3>
+    <ul>
+        <li type="1">Selection of 8 Monoclonal colonies from Agar Plate.</li>
+        <li type="1">Cultured in LB medium containing required antibiotics in 1.5ml centrifuge tube for 2 to 3 hours
+            (constant temperature shaking bed 37 ℃, 200rpm).
+            </li>
+        <li type="1">Verification of PCR positive Recombinant plasmid using bacterial liquid as cDNA template.</li>
+        <li type="1">According to the synthetic target gene sequence.</li>
+        <li type="1">Specific primers containing the required restriction sites were designed.</li>
+        <li type="1">The conditions of colony PCR amplification system were the same as those of common pcr.</li>
+    </ul>
+    <h3>3.Agarose-gel electrophoresis</h3>
+    <ul>
+        <li type="1">Prepare a 1% agarose-gel: Dissolve the agarose in 1X TAE by boiling and add Nucleic acid 
+            dye(10 µl per 100 ml agarose solution).
+            For short DNA fragments, gels with higher agarose percentage should be used.
+            </li>
+        <li type="1">Pour the gel and let it curdle</li>
+        <li type="1">Add 1ul 6X blue loading buffer to sample(5ul)</li>
+        <li type="1">Place the gel into the tank and add 1X TAE buffer so that the gel is fully covered.</li>
+        <li type="1">Pipet sample and marker into the pockets.</li>
+        <li type="1">Run the gel at 110 V for 30 min.</li>
+        <li type="1">Image the gel using ultraviolet light. If necessary, cut out bands.</li>
+    </ul>
+
+    <h1 class="sector-title">DNA recovery from agarose gel</h1>
+	<p>Performed according to the TIANgel Midi Purification Kit</p>
+	
+	<h1 class="sector-title">Restriction Digest</h1>
+	<ul>
+        <li type="1">Add 1ug of DNA to be digested, and adjust with dH20 for a total volume of 16ul. </li>
+        <li type="1">Add 5.0ul of NEBuffer 2. </li>
+        <li type="1">Add 1.0ul of BSA. </li>
+        <li type="1">Add 1.0ul of Hind III.</li>
+        <li type="1">Add 1.0ul of EcoR I (Spe I). </li>
+        <li type="1">adjust with dH20 for a total volume of 50ul. </li>
+        <li type="1">Mix well and spin down briefly. </li>
+        <li type="1">Incubate the restriction digest at 37C° for 30min, and then 80C° for 20min to heat kill the enzymes. We incubate in a thermal cycler with a heated lid </li>
+        <li type="1">Run a portion of the digest on a gel (6ul), to check that both plasmid backbone and part length are accurate.</li>
+    </ul>
+    <h1 class="sector-title">Ligation</h1>
+    <ul>
+        <li type="1">Add 2.5ul of digested plasmid backbone (31.2 ng) </li>
+        <li type="1">Add 3 ul of EcoRI-HF SpeI digested fragment </li>
+        <li type="1">Add 3 ul of XbaI PstI digested fragment  </li>
+        <li type="1">Add 1 ul T4 DNA ligase buffer. Note: Do not use quick ligase </li>
+        <li type="1">Add 0.5 ul T4 DNA ligase </li>
+        <li type="1">Add water to 10 ul </li>
+        <li type="1">Ligate 16C/30 min, heat kill 80C/20 min </li>
+    </ul>
+    <h1 class="sector-title">Chemical Transformation of E.Coli</h1>
+    <ul>
+        <li type="1">Thaw 100 µL DH5α competent cells on ice</li>
+        <li type="1">Pipet plasmid into competent cells and mix them thoroughly </li>
+        <li type="1">Incubate on ice for half an hour </li>
+        <li type="1">Heat shock at 42 ℃ for 60 seconds </li>
+        <li type="1">Incubate on ice for 2 minutes </li>
+        <li type="1">Add 1 ml SOC solution and incubate for 1h at 37℃ on a shaker shaking at 200-300rpm. </li>
+        <li type="1">Pipette 100µL of each transformation onto petri plates Spread with sterilized spreader or glass beads immediately </li>
+        <li type="1">Spin down cells at 6800g for 3mins and discard 800µL of the supernatant. Resuspend the cells in the remaining 100µL, and pipette each transformation onto petri plates Spread with sterilized spreader or glass beads immediately </li>
+        <li type="1">Incubate transformations overnight (14-18hr) at 37°C: Incubate the plates upside down (agar side up) </li>
+        <li type="1">Pick single colonies: Pick single colonies from transformations: do a colony PCR to verify part size, make glycerol stocks, grow up cell cultures and miniprep</li>
+    </ul>
+</div>
+
+
+<!--网页占位部分-->
+<div class="clearspace"></div>
+</body>
