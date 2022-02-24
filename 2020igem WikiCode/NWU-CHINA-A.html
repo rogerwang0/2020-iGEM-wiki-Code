@@ -1,0 +1,454 @@
+{{NWU-CHINA-A/style-basic}}
+<html>
+
+</head>
+<style type="text/css">
+	/**************************************************************HomePage部分CSS*****************************************************************************/
+	.abstractWraper {
+		display: block;
+		margin: 100px 5% 100px 5%;
+		padding: 20px 3% 20px 3%;
+		background-color: #ffffff;
+		box-shadow: 0 0 10px;
+		border-radius: 30px;
+	}
+
+	.poster {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		background-image: url(https://2020.igem.org/wiki/images/e/e3/T--NWU-CHINA-A--homepage-banner.jpg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+	}
+
+	.flipWraper {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		border-width: 0px;
+		margin: 100px 5% 100px 5%;
+		width: 90%;
+		height: auto;
+		text-align: center;
+		background-color: white;
+		border-radius: 30px;
+		box-shadow: 0 0 10px;
+	}
+
+	.flipWraper2 {
+		display: inline-block;
+		width: 200px;
+		height: 200px;
+		margin: 25px 50px 25px 50px;
+		text-align: center;
+		perspective: 1000;
+		-webkit-perspective: 1000;
+	}
+
+	.flipper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: aqua;
+		background-repeat: repeat;
+		backface-visibility: hidden;
+		width: 200px;
+		height: 200px;
+		transform: rotateY(0deg) translateZ(100px);
+		transition: transform .6s;
+	}
+
+	.flipWraper2:hover .flipper {
+		transition: transform .6s;
+		transform: rotateY(90deg) translateZ(100px);
+	}
+
+	.cflipper {
+		position: relative;
+		top: -200px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: orange;
+		background-repeat: repeat;
+		backface-visibility: hidden;
+		width: 200px;
+		height: 200px;
+		transform: rotateY(-90deg) translateZ(100px);
+		transition: transform .6s;
+	}
+
+	.flipWraper2:hover .cflipper {
+		transition: transform .6s;
+		transform: rotateY(0deg) translateZ(100px);
+	}
+
+	.clearspace {
+		height: 400px;
+		width: 100%;
+	}
+
+	.abstractWraper {
+		font-family: "Times New Roman";
+	}
+
+	h2 {
+		font-family: "Road Rage";
+	}
+
+	.down-icon {
+		position: absolute;
+		top: 600px;
+		left: 50%;
+		margin-left: -50px;
+		transition: top .6s ease;
+	}
+
+	.down-icon:hover {
+		top: 590px;
+	}
+
+	.home-title {
+		position: absolute;
+		width: 60%;
+		top: 12%;
+		left: 20;
+		right: 20%;
+		padding: 0;
+		margin: 0;
+		border: 0px;
+		color: rgba(78, 78, 78, 0.966);
+		text-align: center;
+		line-height: 4.0rem;
+		font-size: 3.6rem;
+		font-family: "a Atmospheric";
+	}
+
+	.team-btn,
+	.learnmore-btn {
+		position: absolute;
+		top: 40%;
+		width: 15%;
+		height: 1.8rem;
+		line-height: 1.8rem;
+		padding: 5px 0;
+		font-size: 1.4rem;
+		font-family: 等线 Light;
+		color: antiquewhite;
+		background-color: aqua;
+		text-align: center;
+		border-radius: 1.2rem;
+		box-shadow: rgba(149, 150, 198, 0.3) 0px 4px 10px 0px;
+
+	}
+
+	.team-btn {
+		left: 32%;
+		color: #000 !important;
+		background-image: linear-gradient(-180deg, rgb(103, 235, 179) 0%, rgb(36, 168, 244) 96%) !important;
+	}
+
+	.team-btn:hover {
+		background-image: linear-gradient(-180deg, rgb(103, 235, 179) 0%, rgb(103, 235, 179) 96%) !important;
+	}
+
+	.learnmore-btn {
+		left: 53%;
+		color: #000 !important;
+		background-image: linear-gradient(-180deg, rgb(253, 253, 255) 0%, rgb(246, 246, 255) 96%) !important;
+	}
+
+	.learnmore-btn:hover {
+		color: rgb(82, 84, 147);
+		background: rgb(253, 253, 255);
+		box-shadow: rgba(149, 150, 198, 0.3) 0px 4px 10px 0px;
+	}
+
+	.home-card {
+		position: absolute;
+		height: 320px;
+		width: 100%;
+		top: 55%;
+		display: flex;
+		flex-flow: row;
+		justify-content: space-around;
+	}
+
+	.home-card-item {
+		position: relative;
+		display: flex;
+		flex-flow: column;
+		justify-content: space-around;
+		height: 80%;
+		width: 260px;
+		background-color: rgb(246, 246, 255) !important;
+		border-radius: 10px;
+		box-shadow: rgba(149, 150, 198, 0.3) 0px 4px 10px 0px;
+		cursor: pointer;
+	}
+
+	.home-card-icon {
+		margin: 15px 15px;
+	}
+
+	.home-card-label {
+		color: #000;
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 1.4rem;
+		font-family: 等线 Light;
+		font-weight: 700;
+
+	}
+
+	.home-card-icon-wrapper {
+		width: 80px;
+		height: 80px;
+		margin: auto 90px;
+		text-align: center;
+		border-radius: 40px;
+		background: linear-gradient(-180deg, rgb(103, 235, 179) 0%, rgb(36, 168, 244) 96%);
+		box-shadow: rgba(36, 168, 244, 0.5) 0px 4px 10px;
+		box-shadow: rgba(36, 168, 244, 0.5) 0px 4px 10
+	}
+
+	.home-card-icon-wrapper:hover {
+		background: rgb(103, 235, 179);
+	}
+
+
+	/*Abstract Part*/
+	.abstract {
+		position: relative;
+		margin: 8% 5% 5% 38%;
+		padding: 0 0 0 50px;
+		font-size: 1.4rem;
+		font-weight: 300;
+		font-family: 等线 Light;
+	}
+
+	.abstract-slogan {
+		position: absolute;
+		top: 10%;
+		left: -50%;
+		height: 80%;
+		width: 30%;
+		color: transparent;
+		font-size: 4rem;
+		line-height: 4rem;
+		font-weight: 1000;
+		text-align: center;
+		background-image: linear-gradient(112.9deg, rgba(112, 255, 151, 1) 6.2%, rgba(70, 195, 255, 1) 99.7%);
+		background-clip: text;
+		-webkit-background-clip: text;
+	}
+
+	.abstract-divider {
+		position: absolute;
+		top: 50%;
+		left: 0px;
+		height: 100px;
+		margin-top: -50px;
+		width: 3px;
+		background-color: rgba(36, 168, 244, 0.96);
+	}
+
+	/*图片内容部分*/
+	.home-content-bars {
+		position: relative;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.home-bar-img {
+		display: block;
+		width: 100%;
+		user-select: none;
+	}
+
+	.home-bar-text {
+		float: left;
+		width: 60%;
+		display: block;
+		padding: 20px 80px;
+		font-size: 1.6rem !important;
+		font-weight: 700;
+		font-family: OpenSans;
+	}
+</style>
+<script>
+	//获取屏幕长宽
+	if (window.innerHeight) {
+		screenHeight = window.innerHeight;
+	} else {
+		//IE
+		screenHeight = window.clientHeight;
+	}
+	if (window.innerWidth) {
+		screenWidth = window.innerWidth;
+	} else {
+		//IE
+		screenWidth = window.clientWidth;
+	};
+	//控制poster高度
+	$(".poster").css("display", screenHeight - 96 + "px");
+</script>
+<!--*****************************************************网页内容***************************************************************-->
+<div class="text-wrapper">
+	<div class="poster">
+		<div class="home-title">The Revengers to Pathogenic Bacteria</div>
+		<a href="https://2020.igem.org/Team:NWU-CHINA-A/Team_Members" class="team-btn">Our Team</a>
+		<a href="https://2020.igem.org/Team:NWU-CHINA-A/Design" class="learnmore-btn">Learn More</a>
+		<div class="home-card">
+			<a href="https://2020.igem.org/Team:NWU-CHINA-A/Description" class="home-card-item">
+				<div class="home-card-icon-wrapper">
+					<?xml version="1.0" standalone="no"?>
+					<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+					<svg t="1599809404966" class="home-card-icon" viewBox="0 0 1024 1024" version="1.1"
+						xmlns="http://www.w3.org/2000/svg" p-id="7176" xmlns:xlink="http://www.w3.org/1999/xlink"
+						width="50" height="50">
+						<defs>
+							<style type="text/css"></style>
+						</defs>
+						<path
+							d="M619.955222 477.334479c-1.876744 0-3.774977-0.544399-5.445012-1.680269-4.428869-3.012613-5.577019-9.045003-2.565429-13.473873L841.376171 124.857682c3.01159-4.428869 9.04705-5.577019 13.473873-2.564405 4.428869 3.012613 5.579065 9.045003 2.565429 13.473873L627.984083 473.088782C626.108363 475.847615 623.057887 477.334479 619.955222 477.334479z"
+							p-id="7177"></path>
+						<path
+							d="M666.395928 595.33908 481.121224 595.33908c-5.357008 0-9.698896-4.341888-9.698896-9.698896s4.341888-9.698896 9.698896-9.698896l185.274704 0c5.354961 0 9.698896 4.341888 9.698896 9.698896S671.750889 595.33908 666.395928 595.33908z"
+							p-id="7178"></path>
+						<path
+							d="M666.395928 730.265072 346.165556 730.265072c-5.355985 0-9.698896-4.342912-9.698896-9.698896 0-5.355985 4.341888-9.699919 9.698896-9.699919l320.230372 0c5.354961 0 9.698896 4.342912 9.698896 9.699919C676.0938 725.922161 671.750889 730.265072 666.395928 730.265072z"
+							p-id="7179"></path>
+						<path
+							d="M742.567771 903.385968 281.430182 903.385968c-75.977415 0-137.789203-61.801555-137.789203-137.765667L143.640979 304.578904c0-75.966159 61.811788-137.76976 137.789203-137.76976l251.915473 0c5.354961 0 9.698896 4.342912 9.698896 9.698896s-4.342912 9.698896-9.698896 9.698896L281.430182 186.206936c-65.280796 0-118.391411 53.101405-118.391411 118.371968L163.038772 765.620301c0 65.267493 53.110615 118.368898 118.391411 118.368898l461.138612 0c65.282842 0 118.392434-53.101405 118.392434-118.368898L860.961228 471.063659c0-5.357008 4.341888-9.698896 9.699919-9.698896 5.353938 0 9.698896 4.341888 9.698896 9.698896L880.360044 765.620301C880.359021 841.584414 818.54621 903.385968 742.567771 903.385968z"
+							p-id="7180"></path>
+					</svg>
+				</div>
+				<span class="home-card-label">Description</span>
+			</a>
+			<a href="https://2020.igem.org/Team:NWU-CHINA-A/Protocols" class="home-card-item">
+				<div class="home-card-icon-wrapper">
+					<?xml version="1.0" standalone="no"?>
+					<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+					<svg t="1599809287332" class="home-card-icon" viewBox="0 0 1024 1024" version="1.1"
+						xmlns="http://www.w3.org/2000/svg" p-id="4574" xmlns:xlink="http://www.w3.org/1999/xlink"
+						width="50" height="50">
+						<defs>
+							<style type="text/css"></style>
+						</defs>
+						<path d="M512 472a40 40 0 1 0 80 0 40 40 0 1 0-80 0z" p-id="4575"></path>
+						<path
+							d="M879 824.9L696.3 352V178H768v-68H256v68h71.7v174L145 824.9c-2.8 7.4-4.3 15.2-4.3 23.1 0 35.3 28.7 64 64 64h614.6c7.9 0 15.7-1.5 23.1-4.3 33-12.7 49.4-49.8 36.6-82.8zM395.7 364.7V180h232.6v184.7L719.2 600c-20.7-5.3-42.1-8-63.9-8-61.2 0-119.2 21.5-165.3 60-33.9 28.2-76.3 43.9-121.3 43.9-32.7 0-64.1-8.3-91.8-23.7l118.8-307.5zM210.5 844l41.7-107.8c35.7 18.1 75.4 27.8 116.6 27.8 61.2 0 119.2-21.5 165.3-60 33.9-28.2 76.3-43.9 121.3-43.9 35 0 68.4 9.5 97.6 27.1L813.5 844h-603z"
+							p-id="4576"></path>
+					</svg>
+				</div>
+				<span class="home-card-label">Experiment</span>
+			</a>
+			<a href="https://2020.igem.org/Team:NWU-CHINA-A/Human_Practices" class="home-card-item">
+				<div class="home-card-icon-wrapper">
+					<?xml version="1.0" standalone="no"?>
+					<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+					<svg t="1599809209870" class="home-card-icon" viewBox="0 0 1024 1024" version="1.1"
+						xmlns="http://www.w3.org/2000/svg" p-id="3768" xmlns:xlink="http://www.w3.org/1999/xlink"
+						width="50" height="50">
+						<defs>
+							<style type="text/css"></style>
+						</defs>
+						<path
+							d="M280.661168 393.512399c-66.411549 4.952802-141.645021 28.886911-141.645021 28.886911l29.843702 208.872145 59.673078 59.676148 0 179.032536c0 0 39.219233 29.839609 74.594929 29.839609 34.95614 0 74.597999-29.839609 74.597999-29.839609L377.725854 705.993273l-67.327408-44.883233L280.661168 393.512399zM318.049706 362.456079c27.309996 0 52.176336-9.502421 72.299653-24.888853-30.975479-32.185027-50.115398-75.842339-50.115398-124.036991 0-29.404704 7.222495-57.074903 19.784602-81.552387-13.100366-4.926196-27.142174-7.964392-41.968857-7.964392-65.9879 0-119.475092 53.376675-119.475092 119.221312C198.574614 309.078381 252.061806 362.456079 318.049706 362.456079zM654.734842 330.359057c21.323655 19.757996 49.662073 32.097022 81.055061 32.097022 65.98483 0 119.478162-53.378721 119.478162-119.220289 0-65.844637-53.493332-119.221312-119.478162-119.221312-19.750833 0-38.09769 5.239328-54.510498 13.70514 10.807137 23.046902 17.018605 48.673559 17.018605 75.81164C698.29801 258.222109 681.811524 298.991652 654.734842 330.359057zM757.682515 395.194714l-29.546943 265.916349L646.273123 715.682959l0 154.297179c0 0 39.216163 29.839609 74.597999 29.839609 34.95307 0 74.597999-29.839609 74.597999-29.839609L795.46912 690.947602l66.068741-53.906747 23.444968-210.218816C884.983853 426.822039 819.926138 403.162176 757.682515 395.194714zM728.135572 422.399309c0 0-119.627565-29.838585-208.870098-29.838585-89.786932 0-208.868051 29.838585-208.868051 29.838585l29.835516 238.711753 89.51678 59.673078 0 208.871121c0 0 44.488237 29.839609 89.515756 29.839609 44.482097 0 89.515756-29.839609 89.515756-29.839609L608.78123 720.78414l89.515756-59.673078L728.135572 422.399309zM519.266497 362.724185c82.396615 0 149.192927-66.796312 149.192927-149.192927S601.662089 64.337307 519.266497 64.337307c-82.397638 0-149.192927 66.798359-149.192927 149.193951S436.868859 362.724185 519.266497 362.724185z"
+							p-id="3769"></path>
+					</svg>
+				</div>
+				<span class="home-card-label">HP</span>
+			</a>
+			<a href="https://2020.igem.org/Team:NWU-CHINA-A/Model" class="home-card-item">
+				<div class="home-card-icon-wrapper">
+					<?xml version="1.0" standalone="no"?>
+					<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+					<svg t="1599809120282" class="home-card-icon" viewBox="0 0 1024 1024" version="1.1"
+						xmlns="http://www.w3.org/2000/svg" p-id="3171" xmlns:xlink="http://www.w3.org/1999/xlink"
+						width="50" height="50">
+						<defs>
+							<style type="text/css"></style>
+						</defs>
+						<path
+							d="M768 1024H256a42.666667 42.666667 0 0 1 0-85.333333h213.333333v-213.333334h-341.333333A128 128 0 0 1 0 597.333333V128A128 128 0 0 1 128 0h768A128 128 0 0 1 1024 128V597.333333a128 128 0 0 1-128 128h-341.333333V938.666667H768a42.666667 42.666667 0 0 1 0 85.333333z m-256-384h384A42.666667 42.666667 0 0 0 938.666667 597.333333V128A42.666667 42.666667 0 0 0 896 85.333333h-768A42.666667 42.666667 0 0 0 85.333333 128V597.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h63.573333l156.586667-235.52a42.666667 42.666667 0 0 1 52.48-15.36l138.666667 60.586667 119.04-132.266667A128 128 0 1 1 768 379.733333a125.44 125.44 0 0 1-42.666667-7.68l-141.653333 157.44a42.666667 42.666667 0 0 1-48.64 10.666667l-135.68-58.453333-105.386667 158.293333H512z m256-430.933333a42.666667 42.666667 0 1 0 0 85.333333 42.666667 42.666667 0 0 0 0-85.333333z"
+							p-id="3172"></path>
+					</svg>
+				</div>
+				<span class="home-card-label">Model</span>
+			</a>
+		</div>
+	</div>
+	<!--<svg t="1594461185937" class="down-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2154" width="100" height="100"><path d="M944.083879 289.536302c14.264888 18.286482 15.462157 41.208541 2.670829 51.196009l-417.191704 325.421604c-2.885723 2.261507-12.156878 7.828292-13.732769 9.578146-15.544021 17.181311-37.893029 22.338774-49.947576 11.461029l-392.908648-354.309538c-12.054547-10.887978-9.271154-33.666774 6.272867-50.889017 15.544021-17.21201 37.893029-22.349007 49.988508-11.471262l357.584118 322.443783 408.258241-318.463122C907.910005 264.516466 929.84969 271.260054 944.083879 289.536302z" p-id="2155" style="fill:#fff;"></path></svg>-->
+	<!--<div class="abstract">
+		<div class="abstract-slogan">Our Slogan</div>
+		<span class="abstract-divider"></span>
+		We all enjoy ourselves in doing sports, such as basketball, skateboard etc. At the same time, we take the risk
+		of being hurt. Getting scratch is the most common type of injuries. Most of us choose to use band Aid as soon as
+		getting scratch. Unfortunately, different kinds of band Aids that can be found in the market is not pretty good
+		to our fresh wounds, which might lead to wound infection. Staphylococcus aureus, pseudomonas aeruginosa,
+		clostridium tetani can propagate quickly in fresh wounds, which leads to infection. As a result, normal body
+		metabolism and human tissue structure would be disturbed and damaged by those bacteria. What’s more, the wound
+		will turn red and swelling with some body liquid. In that case, we will in great pain. In order to solve these
+		problems, we decide to create a brand new kind of band Aid that can kill pathogenic bacteria easily without
+		doing any harm to the environment and our body.
+	</div>-->
+	<div class="home-content-bars">
+		<img class="home-bar-img" src="https://2020.igem.org/wiki/images/0/02/T--NWU-CHINA-A--home-description-bar.png">
+		<p class="home-bar-text">We got this inspiration from our daily life. We have encountered the situation of
+			tearing open adhesive bandage but the wound is festering. In order not to let more people suffer such a
+			situation, we intend to take revenge on pathogenic bacteria. Since antibiotics have significant side
+			effects, we chose to use AMP to kill them. We are the revengers to pathogenic bacteria.</p>
+		<img src="https://2020.igem.org/wiki/images/f/fa/T--NWU-CHINA-A--home-len.png"
+			style="height: 200px; float: right; margin: 0 100px;">
+	</div>
+	<div class="home-content-bars">
+		<img class="home-bar-img" src="https://2020.igem.org/wiki/images/a/a0/T--NWU-CHINA-A--home-design.png">
+		<p class="home-bar-text" style="float: right;">We used three components to build our adhesive bandage.
+			AMP is the bactericidal substance we used.
+			PHA is an environmentally friendly carrier of adhesive bandage.
+			And PhaP combines the two organically.</p>
+		<img src="https://2020.igem.org/wiki/images/e/e7/T--NWU-CHINA-A--home-tube.png"
+			style="height: 200px; float: left; margin: 0 100px;">
+	</div>
+	<div class="home-content-bars">
+		<img class="home-bar-img" src="https://2020.igem.org/wiki/images/3/3f/T--NWU-CHINA-A--home-result.png">
+		<p class="home-bar-text">Our large amount of experimental data supporting our project was really feasible
+			—— our new part PhaP-HD5 and PhaP HD5d5 has antibacterial effect on
+			Staphylococcus aureus (strain RN4220), the PhaP HD5d5 expressed by
+			E.coli BL21 can connect to PHA material. Besides, we made a product already.</p>
+		<img src="https://2020.igem.org/wiki/images/6/6d/T--NWU-CHINA-A--band-aids.png"
+			style="height: 200px; float: right; margin: 0 100px;">
+	</div>
+	<div class="home-content-bars">
+		<img class="home-bar-img" src="https://2020.igem.org/wiki/images/3/30/T--NWU-CHINA-A--home-model.png">
+		<p class="home-bar-text" style="float: right;">We constructed the expression model of PhaP-AMP to
+			explore the best expression method of PhaP-AMP.
+			And we simulated the antibacterial effect of
+			antimicrobial peptide to show its antibacterial activity.</p>
+		<img src="https://2020.igem.org/wiki/images/d/d3/T--NWU-CHINA-A--cube.png"
+			style="height: 200px; float: left; margin: 0 100px;">
+	</div>
+	<div class="home-content-bars">
+		<img class="home-bar-img" src="https://2020.igem.org/wiki/images/3/38/T--NWU-CHINA-A--home-HP.png">
+		<p class="home-bar-text">As an important part, human practice makes our project much
+			more complete and help us test the practicality of our project,
+			and it makes our product perfect and benefits the whole world.
+		</p>
+		<img src="https://2020.igem.org/wiki/images/2/25/T--NWU-CHINA-A--people.png"
+			style="height: 200px; float: right; margin: 0 50px;">
+	</div>
+
+
+	<!--网页占位部分-->
+	<div class="clearspace" style="height: 550px;"></div>
+</div>
+</body>

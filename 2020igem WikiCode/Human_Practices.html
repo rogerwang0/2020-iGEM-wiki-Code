@@ -1,0 +1,632 @@
+{{NWU-CHINA-A/style-basic}}
+<!--************************************************************Text Page*********************************************************************-->
+<html>
+</head>
+
+<link rel="stylesheet" type="text/css"
+	href="https://2020.igem.org/wiki/index.php?title=Template:NWU-CHINA-A/text_CSS&action=raw&ctype=text/css" />
+<style>
+	.text-banner {
+		position: relative;
+		width: 100%;
+		height: 652px;
+		padding-bottom: 50px;
+		background-image: url(https://2020.igem.org/wiki/images/6/6e/T--NWU-CHINA-A--teammember_banner.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-position: center center;
+		background-color: rgb(251, 252, 255);
+	}
+
+	.banner-title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 4.5rem;
+		margin: -3rem 0 0 -50%;
+		text-align: center;
+		font-family: "a Atmospheric";
+		font-size: 4.5rem;
+		color: rgb(56, 50, 45);
+	}
+
+
+	.text-wrapper {
+		display: block;
+		margin: 0;
+		padding: 80px 0 100px 0;
+		background-image: url(https://2020.igem.org/wiki/images/4/41/T--NWU-CHINA-A--description_bg.gif);
+		z-index: -1;
+	}
+
+	.text-sector {}
+
+	.text-subsection {
+		position: relative;
+		margin: 0px 7% 80px 7%;
+		padding: 50px 50px 120px 50px;
+		font-size: 1.12rem !important;
+		box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .15) !important;
+		border-radius: 20px;
+		z-index: 1001;
+	}
+
+	.text-bg {
+		position: absolute;
+		font-size: 1.12rem !important;
+		/*box-shadow: 0 .3rem .5rem rgba(0,0,0,.15)!important;*/
+		/*background-color: #8fd0f7;*/
+		background-color: #fff;
+		border-radius: 20px;
+		opacity: 0.75;
+		z-index: 1000;
+	}
+
+	.text-sector,
+	p {
+		font-size: 1.125rem !important;
+		font-weight: 530 !important;
+	}
+
+	.sector-title {
+		margin: 30px 0;
+		font-size: 2rem;
+		font-weight: 1000;
+		color: ;
+	}
+
+	.title-indicator {
+		display: none;
+		position: fixed;
+		top: 96px;
+		left: 4%;
+		width: 180px;
+		margin: 200px auto auto 0%;
+		padding: 15px 20px 15px 20px !important;
+		background-color: #fff;
+		box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+		border-radius: 7px;
+	}
+
+	.indicator-title {
+		display: block;
+		font-size: 0.875rem;
+		font-weight: 330;
+		padding: 10px 0 10px 16px;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.indicator-title-current {
+		font-size: 1.2rem;
+		font-weight: 600;
+		cursor: pointer;
+		user-select: none;
+		box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .15) !important;
+	}
+
+	.indicator-banner-title {
+		margin-bottom: 1.6rem;
+		padding-left: 5px;
+		font-size: 1.4rem;
+		font-weight: 800;
+		user-select: none;
+	}
+
+	.clearspace {
+		height: 300px;
+		width: 100%;
+	}
+
+
+
+
+
+	/*Attributions*/
+	.attributions-form {
+		display: block;
+		height: 515px;
+		margin: 25px auto;
+		background-image: url("https://2020.igem.org/wiki/images/c/cc/T--NWU-CHINA-A--attributions_form.png");
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		z-index: 1 !important;
+	}
+
+	.attributions-left {
+		margin: 0 auto;
+		width: 90%;
+		border-right: #000;
+		display: grid;
+		grid-template-columns: 33.33% 33.33% 33.33%;
+		grid-template-rows: 140px 140px 140px;
+	}
+
+	.attributors-name {
+		display: block;
+		font-size: 1.25rem;
+		font-weight: 800;
+		margin-bottom: 1rem;
+	}
+
+
+	.attributors-text {
+		font-size: 1rem;
+		font-weight: 300;
+	}
+
+	.attributors-wrapper {
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		margin: 20px auto;
+		width: 100%;
+		height: 140px;
+	}
+
+	#member-wrapper {
+		display: grid;
+		grid-template-columns: 100px 100px 100px;
+		grid-template-rows: 140px 140px 140px;
+	}
+
+	.attributors-text-wrapper {
+		display: block;
+		margin: auto 0;
+		width: 50%;
+	}
+
+	.attributors-image {
+		display: inline-block;
+		width: 120px;
+		height: 120px;
+		margin: 10px 20px;
+		border-radius: 60px;
+		background-size: 100% auto;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+
+	#leader:before {
+		content: "\2605";
+	}
+
+	.bold-label {
+		font-weight: 1000 !important;
+	}
+</style>
+<script type="text/javascript">
+	$(function () {
+		//获取屏幕长宽
+		if (window.innerHeight) {
+			screenHeight = window.innerHeight;
+		} else {
+			//IE
+			screenHeight = window.clientHeight;
+		}
+		if (window.innerWidth) {
+			screenWidth = window.innerWidth;
+		} else {
+			//IE
+			screenWidth = window.clientWidth;
+		};
+		//top-banner高度设置
+		$(".text-banner").css("height", screenHeight - 96 + "px");
+		//设置文字蒙版位置
+		var count4 = 0;
+		$(".text-subsection").each(function () {
+			count4++;
+			$(this).attr("id", "text-subsetion" + count4);
+			$(this).after("<div class=\"text-bg\" id=\"text-bg" + count4 + "\"></div>");
+		});
+		var tsYaxis = new Array();
+		var tsLeft = new Array();
+		var tsWidth = new Array();
+		var tsHeight = new Array();
+		for (i = 1; i <= count4; i++) {
+			tsYaxis[i] = $("#text-subsetion" + i).offset().top;
+			tsLeft[i] = $("#text-subsetion" + i).offset().left;
+			tsWidth[i] = parseInt($("#text-subsetion" + i).css("width")) + parseInt($("#text-subsetion" + i).css("padding-left")) + parseInt($("#text-subsetion" + i).css("padding-right"));
+			tsHeight[i] = parseInt($("#text-subsetion" + i).css("height")) + parseInt($("#text-subsetion" + i).css("padding-top")) + parseInt($("#text-subsetion" + i).css("padding-bottom"));
+			$("#text-bg" + i).css("left", tsLeft[i] + "px");
+			$("#text-bg" + i).css("top", tsYaxis[i] - 16 + "px");
+			$("#text-bg" + i).css("width", tsWidth[i] + "px");
+			$("#text-bg" + i).css("height", tsHeight[i] + "px");
+		};
+		$(window).scroll(function () {//若选取body则会因高度为100%无法触发事件
+			for (i = 1; i <= count4; i++) {
+				tsYaxis[i] = $("#text-subsetion" + i).offset().top;
+				tsLeft[i] = $("#text-subsetion" + i).offset().left;
+				tsWidth[i] = parseInt($("#text-subsetion" + i).css("width")) + parseInt($("#text-subsetion" + i).css("padding-left")) + parseInt($("#text-subsetion" + i).css("padding-right"));
+				tsHeight[i] = parseInt($("#text-subsetion" + i).css("height")) + parseInt($("#text-subsetion" + i).css("padding-top")) + parseInt($("#text-subsetion" + i).css("padding-bottom"));
+				$("#text-bg" + i).css("left", tsLeft[i] + "px");
+				$("#text-bg" + i).css("top", tsYaxis[i] - 16 + "px");
+				$("#text-bg" + i).css("width", tsWidth[i] + "px");
+				$("#text-bg" + i).css("height", tsHeight[i] + "px");
+			};
+		});
+		//获取文档长度
+		htmlHeight = $("body").css("height").slice(0, 4);
+		htmlHeight = parseInt(htmlHeight);
+		Yaxis = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+
+		//top-banner高度设置
+		$(".top-banner").css("height", screenHeight - 96 + "px");
+
+		//背景图片位置控制
+		Yaxis = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+		tbHeight = parseInt($(".text-banner").css("height"));
+		tbRatio = Yaxis * 0.5 - 4 + "px";
+		$(".text-banner").css("background-position", "center " + tbRatio);
+		$(window).scroll(function () {//若选取.globalwrapper则会因高度为100%无法触发事件
+			Yaxis = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+			tbHeight = parseInt($(".text-banner").css("height"));
+			tbRatio = Yaxis * 0.5 - 4 + "px";
+			$(".text-banner").css("background-position", "center " + tbRatio);
+			//console.log("center "+tbRatio);
+		});
+
+
+		//点击跳转
+		var scrollTitle = function (e) {
+			console.log(e.target);
+			var mark = $(e.target).attr("id").slice(15, 16);
+			mark = parseInt(mark);
+			window.scrollTo({ top: titleYaxis[mark] - 95, behavior: "smooth" });
+		};
+
+		/*for(var i=1;i<=title.length;i++){
+			clickedTitle=$("#indicator-title"+i);
+			clickedTitle.on("click",function(e){scrollTitle(e);});
+		};*/
+
+		/*设置表格样式*/
+		$(".attributions-form").css("width", $(".text-subsection").width() * 0.8 + "px");
+	})
+</script>
+<div class="text-banner">
+	<span class="banner-title">Human Practices</span>
+</div>
+<div class="text-wrapper">
+	<div class="title-indicator">
+	</div>
+	<div class="text-sector">
+		<div class="text-subsection">
+			<h1 class="sector-title">Overview</h1>
+			<p>In iGEM, we are more likely to ignore a fact that our project needs to be used in the real world. As an
+				important part, human practice makes our project much more complete and help us test the practicality of
+				our project. We believe that the contribution of both experts and consumers makes our product perfect
+				and benefits the whole world.
+			</p>
+			<p>The human practice part of our project consists of thoughts of team members and suggestions of experts.
+				Besides, we also have obtained some feedbacks of the public to make sure that our project fits the real
+				world. At the same time, we popularized synthetic biology, so that people would have a deeper
+				understanding of it. The most important part of our human practice is that we adjust our project
+				according to the results of every human practice. adhesive bandage already have a relatively mature
+				market now.
+				What about the new type of adhesive bandage we pruduced, will it have a market?</p>
+			<p>Can we bring it to market? Can it be accepted by consumers? How can we popularize it? Can it survive in
+				the severe competitive environment? How can we ensure the advantages of our products in the market? In
+				order to make sure that our products can satisfy more people, we decided to seek the advice of people
+				from different industries in society, including doctors, professors, drug developers, marketing
+				professionals, consumers, students, experts and the public, so as to learn from in their respective
+				fields and learn more about how to improve our projects.</p>
+			<img class="text-img-wide" src="https://2020.igem.org/wiki/images/f/f3/T--NWU-CHINA-A--HP-img-1.png">
+		</div>
+		<div class="text-subsection">
+			<img class="text-img" src="https://2020.igem.org/wiki/images/b/b4/T--NWU-CHINA-A--HP-img-2.png">
+		</div>
+		<div class="text-subsection">
+			<h1 class="sector-title">PDCA cycle</h1>
+			<p>PDCA cycle was first proposed by Walter A. Shewhart, an American quality management expert. He divided
+				quality management into plan, do, check and Act. PDCA requires us to make a plan, implement the plan,
+				check the effectiveness of the implementation, and then include the successful ones into the criteria,
+				and leave the unsuccessful ones to the next cycle to solve. Our project has used this mature framework
+				from the start to ensure the smooth progress of our project without missing a single step. Next, we will
+				use this framework to explain how our project has been advanced and improved step by step.
+			</p>
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/1/14/T--NWU-CHINA-A--HP-img-3.jpg">
+		</div>
+		<div class="text-subsection">
+			<h1>Training Camp</h1>
+			<p>Our training began in November last year, and every member of our team actively participated, opened up
+				and gained the corresponding ability in this training camp.</p>
+			<p>First of all, our team members have been trained in skills. The members who participated in the previous
+				iGEM competitions shared their participation experience and trained our team members to use software and
+				improve the ability of searching literature. In addition, our team members have also carried out
+				self-study work in their own areas of responsibility, after more than 5 months of training, our team
+				members have mastered the use of professional software and the ability to search literature retrieval.
+			</p>
+			<p>While training, we were also thinking about projects and searching literature. In order to determine our
+				project, we met at regular times every week. We shared ideas and brainstormed together through online
+				meetings, and we finally determined the project.There were a lot of interesting ideas in the process and
+				we learned how to make small ideas possible.</p>
+			<p>After the project was determined, all team members collected information, brainstormed and improved the
+				project, so that the project was optimized. Winter came as scheduled. A sudden epidemic disrupted
+				iGEMer's plans and arrangements. After experiencing difficulties such as not being able to return to
+				school, not being able to do experiment, and not being able to hold offline meetings, we were still
+				moving forward.</p>
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/1/19/T--NWU-CHINA-A--HP-img-4.jpg">
+		</div>
+		<div class="text-subsection">
+			<h1>Inspiration</h1>
+			<p>Our Inspiration comes from two places, the first is our daily life and this has been mentioned on our
+				home page. Another point is as follows.As a fire-prone state, wildfire has burned 3.9 millions land in
+				California this year, which is the forth
+				fire this three years. Across the state, 17,000 firefighters are fighting with nearly 24 fire. Wild
+				fires frequently occur in Australia during the hot and dry season. From November 8 last year to February
+				13 this year, the fire lasted for four months， which caused at least 33 deaths, mostly are firefighters,
+				including many firefighters from other countries. In Liangshan County, Sichuan Province, due to the
+				continuous forest fires in the spring of 2019 and 2020, people have endured a lot. To put out the fire,
+				we sacrificed 31 firefighters and a large number of personnesl. Fire leads to plenty of loss and
+				casualties all around the world annually. Firefighters are easier to get burnt or bruised in their daily
+				training or working. The infection is serious if those wounds are not disinfected in time, especially
+				under complex environmental conditions. To protect
+				our firefighters from lethal bacterial infection, we intend to develop an antibacterial and completely
+				biodegradable adhesive bandage.This is our original goal and the inspiration for our project，and we
+				really hope that what we have done will help more people.</p>
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/6/6a/T--NWU-CHINA-A--HP-img-20.jpg">
+		</div>
+		<div class="text-subsection">
+			<h1>Interview firefighters</h1>
+			<p>We specially interviewed Hang Su, Director of Fire Rescue Detachment Operation Command Center and Mingwei
+				Fan, Fire station chief. In the process of talking with them, we know that scraps, scratches, and
+				scratches are relatively easy to encounter in their daily life and practical training. When dealing with
+				fires or emergency situations in peacetime, burns, stab wounds, scratches and even punctures have
+				occurred because of the complicated conditions at the scene. Many situations at work are unavoidable, so
+				the wound cannot be treated in time while working. Small wounds are usually treated with adhesive
+				bandage for
+				about 3-4 days to heal, while large wounds need to be disinfected and then bandaged to heal longer. If
+				the wound becomes purulent, it will take more time to heal.</p>
+			<p>In special circumstances, when the supplies are not available for earthquake rescue, there are often
+				abrasions on feet and shoes, but because the situation is urgent and not handled in time, and the
+				environment is relatively harsh, there will be secondary infections. And they also pointed out that
+				because of their relatively large amount of adhesive bandage, the adhesive bandage used will not be
+				discarded after
+				special treatment. Sometimes outings, such as hiking, you'll see some discarded adhesive bandage next to
+				the
+				supply kit, or some of them will be put on the tree after they are wetted with sweat.</p>
+			<p>After we introduced our ideas, Captain Fan and Director Sue of the Fire Brigade expressed great interest
+				in our ideas and expressed their willingness to accept this product without sacrificing environmental
+				and personal health costs, which should be vigorously promoted and developed. Finally, they also put
+				forward some suggestions to our idea ① the economic cost can be lower, so that ordinary people can use,
+				enjoy this benefit. ② the size of the dressing and the use of methods can be demonstrated, such as the
+				shape of the setting can be more close to the joint, because ordinary creation can be attached to the
+				joint using easy to both sides of the wind bacterial infection. ③ High temperature resistance (fire
+				field), water resistance (flood disaster) for special industries have a better target. ④ Storage under
+				natural conditions does not affect the ability of medicine, easy to carry, comprehensive conditions can
+				be better integrated into our lives. From the conversation with them, we learned that the flexibility of
+				adhesive bandage is also a factor affecting the sense of use. Better flexibility will not affect the
+				festival activities and will not affect daily life and work. The second is waterproof and fit to the
+				skin, ordinary adhesive bandage may reduce the viscosity after meeting the water. So it is not suitable
+				for people of this particular occupation. We learned from these suggestions and tried to apply them to
+				our project.</p>
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/e/e4/T--NWU-CHINA-A--HP-img-7.png">
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/c/c5/T--NWU-CHINA-A--HP-img-8.jpg">
+		</div>
+		<div class="text-subsection">
+			<h1>Marketing Research</h1>
+			<p>The environmental pollution caused by adhesive bandage and the high-end wound dressings that combine
+				adhesive bandage
+				and antibacterial functions mentioned by firemen have attracted our attention. After we did some
+				investigations about the environmental pollution caused by medical wastes in our lives and as we
+				mentioned in our interview that the market conditions for this type of dressing used in our project, we
+				made the following summary.</p>
+			<h1>Medical waste</h1>
+			<img class="text-img-small" src="https://2020.igem.org/wiki/images/c/cb/T--NWU-CHINA-A--HP-img-9.png">
+			<p>Refers to the direct or indirect infectious, toxic and other hazardous waste produced by medical and
+				health institutions in medical treatment, prevention, health care and other related activities.It
+				contains a large number of infectious pathogens, the hazard is significantly higher than ordinary
+				household garbage,If management is lax or improperly handled, medical waste can easily cause pollution
+				to water, soil and air.Can easily become the source of the spread of the virus, cause the spread of the
+				epidemic.</p>
+			<p>
+				Items contaminated by patients’ blood, body fluids and excreta, including: cotton balls, cotton swabs,
+				drainage slivers, gauze and various other dressings are all infectious waste in medical waste.Discarded
+				general medicines, such as antibiotics, are all medical wastes in medical waste.
+			</p>
+			<h1>Current status of medical waste treatment</h1>
+			<p>With the increase of population and medical institutions and the improvement of medical conditions, the
+				amount of medical waste generated is increasing year by year.The damage is more serious and the
+				incidence rate increases.And the medical waste generated has increased, such a vicious circle, the
+				social losses caused will be immeasurable.</p>
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/b/b3/T--NWU-CHINA-A--HP-img-10.png">
+			<p>Among the many medical waste treatment methods currently used internationally, the high-temperature
+				incineration treatment method is the first,The reason is that this technology has many advantages, such
+				as wide application range, thorough disinfection and sterilization, significant volume reduction effect,
+				complete relevant standards and specifications, and mature technology.It has been widely used
+				internationally for many years.</p>
+			<h1>Defects of incineration technology</h1>
+			<p>The main advantage of incineration technology is that the volume and weight are significantly reduced,
+				and the waste is obviously destroyed.But its biggest disadvantage is serious air pollution.Prone to
+				produce highly toxic substances such as dioxins, polycyclic aromatic compounds, polychlorinated
+				biphenyls, and harmful gases such as hydrogen chloride, hydrogen fluoride and sulfur dioxide, a complete
+				exhaust gas purification system needs to be equipped, and the incineration fly ash contains a lot of
+				heavy metals; In addition, the cost of incineration is high, and the incinerator needs frequent
+				maintenance and has a short service life.</p>
+			<h1>Development status of global high-end wound dressing products</h1>
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/3/35/T--NWU-CHINA-A--HP-img-11.png">
+			<p>In recent years, the global medical dressing market has basically remained stable. With the increasingly
+				problem of global population aging and the resulting increase in patients with ulcers and other
+				diseases, the global medical dressing market demand will continue to grow.</p>
+			<p>From the perspective of development trends, consumers’ demand for multi-functional, new-material medical
+				dressings is becoming increasingly urgent。
+			</p>
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/e/e2/T--NWU-CHINA-A--HP-img-12.png">
+			<p>
+				High-end wound dressings are mainly targeted at wounds that are difficult to heal, take a long time, are
+				more painful for patients, and may cause serious complications.High-end wound dressings mainly has the
+				advantages of reducing the pain of drug change, shortening the healing time, reducing the number of drug
+				changes and so on.</p>
+			<p>
+				According to BMI Research, the global high-end dressing market reached $5,595 million in 2017 and is
+				expected to reach $7,015 million in 2022.The new high-end dressing market has broad prospects and is the
+				current trend of industry development.</p>
+			<h1>What should we do?</h1>
+			<p>The polyhydroxy fatty acid ester (PHA) we use is a new type of degradable material with a very
+				special
+				degradation method.After use, PHA can be completely degraded into β-hydroxybutyric acid, carbon
+				dioxide
+				and water in the body.It has its advantages in performance, practicability, degradability and
+				safety.
+			</p>
+			<p>In terms of performance,PHA can meet or exceed the performance of traditional plastics in certain
+				specific areas;In terms of practicality,It has application performance and sanitary performance
+				similar
+				to similar traditional materials;In terms of degradability, after PHA is used, it can be degraded
+				quickly in the natural environment, and become a substance and non-toxic gas that are easily used by
+				the
+				environment, reduce the impact on the environment;In terms of safety, the substances produced or
+				remaining in the degradation process aren’t harmful to the environment, will not affect the survival
+				of
+				humans and other creatures.</p>
+		</div>
+		<div class="text-subsection">
+			<h1 class="sector-title">Pharmacy research</h1>
+			<p>Our team members visited a number of pharmacies in the september this year. Including Tairui Pharmacy,
+				Zhongyou Jiankang Pharmacy, Guangji Pharmacy, Taisheng Pharmacy, Boai Pharmacy, Yikang Pharmacy, etc. We
+				hope to understand the needs of salesmen and consumers by doing some investigations about the existing
+				adhesive bandage on the market, we concluded that:</p>
+			<p>Types and sales of band aids investigated:Yunnan Baiyao(Lightweight and breathable type，Waterproof and
+				ultra-thin type, Portable type, Anti-inflammatory and hemostatic guaiac type). Band-Aid(Benzalkonium
+				chloride band-aid,Waterproof type，Common type). Kaiyan(dedicated combination of fingertips， Slim and
+				breathable，Superlarge combination，Waterproof and breathable type).Ruoshu，Zhende，vitastic, etc. It is
+				generally reflected that the sales volume of Yunnan Baiyao is relatively good. The first is because
+				Yunnan Baiyao is economical, and the second is because of brand factors, customers trust well-known
+				brands.</p>
+			<img class="text-img-small" src="https://2020.igem.org/wiki/images/8/87/T--NWU-CHINA-A--HP-img-13.png">
+			<p>Public expectations for future adhesive bandage:Most people's requirements for future adhesive bandage
+				are mainly
+				reflected in the three aspects of outer packaging, comfort and antibacterial properties.</p>
+			<p>①The color of the adhesive bandage should not be too strange for the outer packing, others suggest that
+				it would
+				be better to make them transparent or sell by classification by skin tone.</p>
+			<p>②For comfort, the sticky part and adhesive bandage of the skin is extremely troubling for patients with
+				latex
+				allergies. In addition, it is also an important demand for consumers to consider both waterproof and
+				breathability.</p>
+			<p>③As far as bacteriostasis is concerned, most of the bandages on the market lack bacteriostasis
+				function.In addition, the impermeability leads to the proliferation of anaerobic bacteria in the wound
+				and causes infection. There are still a few people who suggest that adhesive bandage should have
+				hemostatic
+				function, and that adhesive bandage of different specifications should be designed to meet people's
+				needs.</p>
+			<p>We also know that the infection of wounds is mainly related to the adhesion of pathogenic bacteria and
+				the formation of biofilm on the surface. Sometimes, because of the impermeability or poor adhesion of
+				adhesive bandage, it is easy to cause infection. After infection, people mainly choose to apply
+				antibiotics to
+				wounds. Nowadays, a large number of antibiotics have been studied. As for the shortcomings of
+				antibiotics, studies have shown that overuse of antibiotics may lead to antibiotic resistance problems,
+				even superbugs. All the pharmacy staff and consumers we interviewed also expressed their understanding
+				of the shortcomings of antibiotics, such as its great side effects, allergy to some antibiotics,
+				inability to use antibiotics after drinking or patients with poor liver and kidney function, and drug
+				resistance caused by taking too much antibiotics. At this time, we turned our attention to antibacterial
+				peptide, an antibacterial substance with low systemic toxicity and low drug resistance.</p>
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/6/60/T--NWU-CHINA-A--HP-img-14.jpg">
+		</div>
+		<div class="text-subsection">
+			<h1 class="sector-title">Academic communication with Professor Han</h1>
+			<p>In the initial stage, we considered to use six kinds of antimicrobial peptides with their own
+				characteristics. Among them, HBD3,HD5,HD5d5,DCD1L is human antimicrobial peptides. ACD (allergic contact
+				dermatitis) is a common but complex skin disease. Its common symptoms are local erythema, swelling,
+				papules, etc. And if it’s serious, it can spread from the contact around the emergence of toxic
+				epidermal necrosis or granulomatous lesions, accompanied by systemic symptoms, such as headache, fever
+				and so on. In order to reduce the possibility of ACD caused by allergen contact with wound, our team
+				selected human-friendly antimicrobial peptides by searching many literatures and asking teachers in the
+				process of selecting antimicrobial peptides. In addition, we also selected two artificially designed
+				antimicrobial peptides, P5 and P6.2, which were analyzed by biological software to delete some
+				meaningless sequences on the basis of the original antimicrobial peptides and improve their active
+				domains to enhance their functions. And we also used the methods of synthetic biology to express and
+				verify its antibacterial activity afterward.</p>
+			<p>In the middle of our experiment, we encountered some difficulties about our experiment. The
+				electrophoretic bands of antimicrobial peptides were very clear but could not be purified. For this
+				reason, we specially interviewed Han Jing, a professor in the Chinese Academy of Sciences and she has
+				rich experience for this. She analyzed that antimicrobial peptides may exist in the form of inclusion
+				bodies and in bacteria in the form of precipitation. It existed very little in the supernatant. But the
+				process is very difficult for us, if we need to purify inclusion body protein. So we intended to get as
+				much protein as possible to be expressed in the supernatant by adjusting the concentration and time.</p>
+			<p>In the later, professor Han suggested that we can make PHA electrospinning to enhance its elasticity
+				and air permeability. So it will be more suitable for us as an adhesive bandage material and can be
+				affixed to the joint for facilitate movement.</p>
+			<img class="text-img-small" style="width: 30% !important;"
+				src="https://2020.igem.org/wiki/images/d/d6/T--NWU-CHINA-A--HP-img-hanjing.jpg">
+			<img class="text-img-small"
+				src="https://2020.igem.org/wiki/images/3/30/T--NWU-CHINA-A--collaboration-hanjing.jpg">
+		</div>
+		<div class="text-subsection">
+			<h1 class="sector-title">Suicide Switch</h1>
+			<p>Considering that our modified Escherichia coli would escape from the laboratory, we wanted to design a
+				nutrition-dependent suicide switch to limit the engineering bacteria in the culture medium, so we worked
+				with SZPT-CHINA team. The contents are as follows: <a
+					href="https://2020.igem.org/Team:NWU-CHINA-A/Partnership">https://2020.igem.org/Team:NWU-CHINA-A
+					/Partnership</a>
+			</p>
+		</div>
+		<div class="text-subsection">
+			<h1 class="sector-title">Industry</h1>
+			<p>The interview between Liang Zhao and Yang Li is an important part of bringing our project from
+				the laboratory to the market.</p>
+			<img class="text-img" src="https://2020.igem.org/wiki/images/1/16/T--NWU-CHINA-A--HP-img-22.png">
+			<img class="text-img" src="https://2020.igem.org/wiki/images/f/f2/T--NWU-CHINA-A--HP-img-23.png">
+		</div>
+		<div class="text-subsection">
+			<h1 class="sector-title">Questionnaire</h1>
+			<p>After the Pharmacy research, we made product improvements according to the needs of the public. in order
+				to hear more voices, we combined with our products to do an electronic version of the questionnaire. As
+				of October 25, we had received a total of 528 public feedback, and we have put the contents and results
+				of the questionnaire at the bottom.</p>
+			<p>From the results of the questionnaire, we can draw the conclusion that most people do not know much about
+				PHA and antimicrobial peptides, which also urges us to carry out further educational activities.</p>
+			<embed src="https://2020.igem.org/wiki/images/7/75/T--NWU-CHINA-A--questionnaire.pdf" type="application/pdf"
+				width="100%" height="650px" internalinstanceid="81" />
+		</div>
+		<div class="text-subsection">
+
+			<h1 class="sector-title">Athletes</h1>
+			<img class="text-img-small" src="https://2020.igem.org/wiki/images/9/90/T--NWU-CHINA-A--HP-img-18.png">
+			<p>We wanted to know ideas about our project for those who often use adhesive bandage, so we
+				specially interviewed four athletes, Haoxuan Zhang , Jiancheng Ge, JiazhiLiu and Chenxi Bo. They said
+				that in the course of training, they often have some bruises on their hands, legs or some joints, and a
+				large number of adhesive bandage were used. However, the existing adhesive bandage are not very friendly
+				to the joint
+				wounds and have poor elasticity. It hinders the movement of the joints. In addition, the permeability is
+				general, sometimes sweat will soak the adhesive bandage to reduce its stickiness and infection may
+				occur. Our
+				electrospinning technology can solve this problem very well. With regard to stickiness, although PHA
+				itself has a certain degree of adhesion, we still expect to improve its stickiness by expressing
+				bacterial mucin, which we will also carry out in the experiment. After listened to our introduction, the
+				other was very willing to accept this new type of adhesive bandage and hopes to promote it as soon as
+				possible.Their affirmation gave us great encouragement.
+			</p>
+		</div>
+		<div class="text-subsection">
+
+
+			<h1 class="sector-title">Doctor</h1>
+			<p>
+				We interviewed Dr. Fan. When they encounter a wound contamination, they usually
+				bandage the wound with sterile gauze after being treated with iodophor, hydrogen peroxide and alcohol.
+				This leads to a problem that if the wound is healed for a long time, the wound will be pulled when the
+				gauze is changed and cleaned again, resulting in secondary injury, but it will be susceptible to
+				infection if it is not replaced. This will not only lead to longer healing time, increased pain of
+				patients, but also produce a large amount of medical waste. If we use our new biodegradable
+				bacteriostatic adhesive bandage, we can avoid these two problems, reduce the suffering of patients and
+				reduce
+				the production of medical waste.
+			</p>
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/d/de/T--NWU-CHINA-A--HP-img-19.png.jpg">
+		</div>
+		<div class="text-subsection">
+			<h1 class="sector-title">Patent</h1>
+
+			<p>At present, our project has applied for a patent, and will soon be on the market!</p>
+
+			<img class="text-img-middle" src="https://2020.igem.org/wiki/images/0/00/T--NWU-CHINA-A--patent.png">
+		</div>
+	</div>
+
+
+	<!--网页占位部分-->
+	<div class="clearspace"></div>
+	</body>

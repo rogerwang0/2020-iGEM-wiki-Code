@@ -1,0 +1,313 @@
+<!--************************************************************Text Page*********************************************************************-->
+<html>
+</head>
+<style>
+    .equation{
+        display: block;
+        text-align: center !important;
+    }
+    .equation .MathJax{
+        display: inline-block;
+        text-align: center;
+        width: 80%;
+    }
+</style>
+<link rel="stylesheet" type="text/css"
+	href="https://2020.igem.org/wiki/index.php?title=Template:NWU-CHINA-A/text_CSS&action=raw&ctype=text/css" />
+<script type="text/javascript"
+	src="https://2020.igem.org/wiki/index.php?title=Template:NWU-CHINA-A/text_JS&action=raw&ctype=text/javascript"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<style type="text/css">
+    .model-img-label{
+        display: block;
+        width: 100%;
+        text-align: center;
+        color:#44484b;
+    }
+</style>
+<div class="text-banner" style="background-image: url(https://2020.igem.org/wiki/images/1/1d/T--NWU-CHINA-A--model-banner.jpg) !important;">
+    <span class="banner-title" style="color: ;">Model</span>
+</div>
+<div class="text-wrapper">
+    <div class="title-indicator">
+    </div>
+    <div class="text-sector">
+        <div class="text-subsection">
+            <h1 class="sector-title">Overview</h1>
+            <p>We aim to develop mathematical models that act as a bridge between the theory of design and our
+                biological work, to further optimize our experiments, understand our results and bring our ideas
+                closer to reality.
+            </p>
+            <p>Our E.coli is used to product PhaP-AMPs, a kind of fusion protein has antibacterial activity. For
+                that, we simulated the process of PhaP-AMPs expression under IPTG induction and analyse their
+                antibacterial effect quantitatively.</p>
+
+            <p>Our Goals:</p>
+            <p>1. Explore the optimal expression method in PhaP-AMPs product</p>
+            <p>2. Show the antibacterial effect of PhaP-AMPs</p>
+        </div>
+        <div class="text-subsection">
+            <h1 class="sector-title">Production of PhaP-AMPs</h1>
+            <p>Our fermentation productions PhaP-AMPs has antibacterial activity. They may cause product inhibition
+                to engineering E.coli. So by assuming cells growth follows Aiba equation, specific growth rate can
+                be represented as: </p>
+            <p class="equation">$\mu =\mu _m\frac{S}{K_S+S}e^{-K_{Ip}P}=\frac{1}{X}\frac{dX}{dt}$(1)</p>
+            <p>In equation (1), $X$refers to cell concentration, $S$refers to substrate concentration and $P$is
+                product concentration. $\mu $is specific growth rate, as well as $\mu _m$is maximum specific growth
+                rate and $K_S$ is half-velocity constant, $K_{Ip}$ is product inhibition constant.</p>
+            <p>Product formation kinetics is expressed by Luedeking-Piret equation as:</p>
+            <p class="equation">$\frac{dP}{dt}=\alpha \frac{dX}{dt}+\beta X$ (2)</p>
+            <p>Because product is independent of cell growth, can be regarded as$ \alpha =0$, so equation (1) can be
+                reformed into equation (3) as follows.</p>
+            <p class="equation">$\frac{dP}{dt}=\beta X$ (3)</p>
+            <p>Our product, PhaP-AMPs are intracellular protein. Perforating at the plasma membrane of bacteria is
+                their bactericidal mechanism. They can make the content flow out and the bacteria die.</p>
+            <p>Assumptions:</p>
+            <p>1.The cell growth and product is uniform.</p>
+            <p>2.Before induction, there is no leakage expression.</p>
+            <p>3.When product is in cell, it has no inhibition effect to bacteria.</p>
+            <p>4.After product concentration reach MIC (minimum inhibitory concentration), PhaP-AMP overflow and
+                take inhibition effect to bacteria.</p>
+            <p>A set of ordinary differential equations(ODE) is used to describe the changes of substrate, biomass
+                and product at each stage in medium. </p>
+            <p class="equation">$$
+                \begin{cases}
+                \mu =\mu _m\frac{S}{K_S+S}=\frac{1}{X}\frac{dX}{dt},t\left( P \right) \leqslant t\left( MIC
+                \right)\\
+                \mu =\mu _m\frac{S}{K_S+S}e^{-K_{IP}P}=\frac{1}{X}\frac{dX}{dt},t\left( P \right) \geqslant t\left(
+                MIC \right)\\
+                \frac{dP}{dt}=0,t\left( X \right) \leqslant t\left( Xa \right)\\
+                \frac{dP}{dt}=\beta X,t\left( X \right) \geqslant t\left( Xa \right)\\
+                -\frac{dS}{dt}=\frac{1}{Y_{X/S}^{*}}\frac{dX}{dt}+\frac{1}{Y_{P/S}}\frac{dP}{dt}+mX\\
+                \end{cases}
+                $$
+            </p>
+            <p>$m$ is maintenance coefficient, $Y^*_{\frac{X}{S}}$ is growth yield coefficient and $Y_{\frac{P}{S}}$
+                is product yield coefficient.</p>
+            <p>In equation (3), coefficient $\beta =\frac{dP}{Xdt}$ , namely the average protein production per cell
+                in unit time, so we built up a expression model in single cell.</p>
+            <p class="equation">$DNA\xrightarrow{\text{ }a_p\text{ }}mRNA$ </p>
+            <p class="equation">$mRNA\xrightarrow{\text{ }b_p\text{ }}protein$ </p>
+            <p class="equation">$mRNA\xrightarrow{\text{ }r_m\text{ }}\varphi $ </p>
+            <p class="equation">$protein\xrightarrow{\text{ }r_p\text{ }}\varphi $ </p>
+            <p class="equation">$\frac{dmr}{dt}=a_p-r_mmr$ </p>
+            <p class="equation">$\frac{dPr}{dt}=mrb_p-r_pPr$ </p>
+            <p>$mr$ expresses the number of mRNA per cell and $Pr$ is number of PhaP-AMP per
+                cell.$a_p$ is promoter activity, $r_m$ is degradation rate of mRNA, $b_p$ is average translation
+                rate and $r_p$ is degradation rate of protein.</p>
+            <p>At the initial time, the number of mRNA and protein is approximated as zero.
+                $mRNA|_{t=0}=0$
+            </p>
+            <p class="equation">$protein|_{t=0}=0$ </p>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/2/24/T--NWU-CHINA-A--model-figure_1-1.png"><span class="model-img-label">Figure 1-1
+                    mRNA per cell changes over time</span></div>
+            <p>The curve of mRNA-t shows the number of mRNA per cell rising and entering a stable stage around 8
+                rapidly in 30 seconds. So the number of mRNA per cell can be considered as constant in the whole
+                process of PhaP-AMP expression.</p>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/e/eb/T--NWU-CHINA-A--model-figure_1-2.png"><span class="model-img-label">Figure 1-2
+                    PhaP-AMPs per cell changes over time </span></div>
+            <p>The curve of PhaP-AMPs-t shows the amount of PhaP-AMPs is stable in about four hours, and gene
+                expression enters a steady state around 2.85$\times $ 106. </p>
+            <p>After analyzing for individual bacteria, we need to perform further modeling analysis to the whole
+                reaction system.</p>
+            <p class="equation">$\beta =\frac{dP}{Xdt}=c\frac{dPr}{dt}$</p>
+            <p>$c$ is a constant, namely the mass of a PhaP-AMP molecular per the average mass of a single cell.</p>
+            <table class="text-table">
+                <tr>
+                    <th>PhaP-AMP</th>
+                    <th>c(mg)</th>
+                </tr>
+                <tr>
+                    <th>PhaP-DCD-1L</th>
+                    <th>4.1910e-5</th>
+                </tr>
+                <tr>
+                    <th>PhaP-HD5</th>
+                    <th>3.9867e-5</th>
+                </tr>
+                <tr>
+                    <th>PhaP-HD5d5</th>
+                    <th>3.9651e-5</th>
+                </tr>
+                <tr>
+                    <th>PhaP-HBD3</th>
+                    <th>4.1096e-5</th>
+                </tr>
+                <tr>
+                    <th>PhaP-P5</th>
+                    <th>3.7824e-5</th>
+                </tr>
+                <tr>
+                    <th>PhaP-P6.2</th>
+                    <th>3.8090e-5</th>
+                </tr>
+            </table>
+            <p>Use a web site to calculate molecular weight of PhaP-AMPs </p>
+            <p>(http://www.bio-soft.net/sms/prot_mw.html)</p>
+            <p>Phase 1: Escherichia coli culture (no IPTG induction)</p>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/c/ca/T--NWU-CHINA-A--model-figure_2-1.png"><span class="model-img-label">Figure
+                    2-1</span></div>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/9/90/T--NWU-CHINA-A--model-figure_2-2.png"><span class="model-img-label">Figure
+                    2-2</span></div>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/d/dc/T--NWU-CHINA-A--model-figure_2-3.png"><span class="model-img-label">Figure
+                    2-3</span></div>
+            <p>Although the inflection points in the figure2-1 and figure2-2 appear sharp, when magnified them, the
+                inflection points are still graded naturally.</p>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/4/40/T--NWU-CHINA-A--model-figure_2-4.png"><span class="model-img-label">Figure
+                    2-4</span></div>
+            <p>Go through the simulation of cell growth and substrate consumption in 10 hours, we find that the
+                quality of substrate is down to zero in 5 hours, then mass of cell keeps constant without
+                considering the natural cell death. And the specific growth rate is close to maximum in about 3
+                hours. After that, the mass of cell quickly grows and substrate consumes rapidly. The simulation
+                result is instructive to our experiment. We start the induction with IPTG at third hour.</p>
+            <p>Phase 2: Induction expression with IPTG</p>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/4/48/T--NWU-CHINA-A--model-figure_3-1.png"><span class="model-img-label">Figure 3-1
+                    the mass of cell changes over time in 6 hours after induction</span></div>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/7/79/T--NWU-CHINA-A--model-figure_3-2.png"><span class="model-img-label">Figure 3-2
+                    the quality of substrate changes over time in 6 hours after induction</span></div>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/1/18/T--NWU-CHINA-A--model-figure_3-3.png"><span class="model-img-label">Figure 3-3
+                    the concentration of product changes over time in 6 hours</span></div>
+            <p>We simulate the concentration of cell, substrate and product changes over time in 6 hours after IPTG
+                induction and find that substrate has been completely consumed before the concentration of product
+                reaches MIC in one hour’s induction.(The molecular weight of PhaP-HD5 is 24kDa. And the MIC of
+                PhaP-HD5 to E.coli is 2.5μM, namely 60 mg/L in reference.) So there is no obvious inhibitory effect
+                on engineer bacteria. Then E.coli do not grow because of inadequate substrate.</p>
+            <p>In order to achieve higher yield and more sustainable production, batch culture will be replaced by
+                continuous culture in future. So we simulate the process of continuous culture. Feeding concentrate
+                is 10g/L (Luria-Bertani medium) and the speed of feeding is the same amount as product flowing. The
+                reactor volume is 1 L.</p>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/6/6e/T--NWU-CHINA-A--model-figure_rof1.png"><span
+                    class="model-img-label">$yield=product_{inside}+product_{outside}$</span></div>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/6/6a/T--NWU-CHINA-A--model-figure_rof2.png"><span
+                    class="model-img-label">$yield=product_{inside}+product_{outside}$</span></div>
+            <p>When the feeding rate is slow, it can not satisfy the growth and production of engineer bacteria. But
+                when the feeding rate is too fast, the cells are diluted rapidly and level of product become lower.
+                It also cause waste of substrate.
+                When feeding speed is around 0.1 mL/s, yield is higher and it can keep fermenting longer in the
+                reactor.
+            </p>
+        </div>
+        <div class="text-subsection">
+            <h1 class="sector-title">Antibacterial effect</h1>
+            <p>Assumptions:</p>
+            <p>1.The bacteria distributes evenly on solid medium.</p>
+            <p>2.The concentration of PhaP-AMPs distributes evenly in zone of inhibition</p>
+            <p>3.At the border of inhibition zone, the concentration of PhaP-AMPs is MIC.</p>
+            <p>We use $l$ as the diameter of inhibition zone. So the area of inhibition zone can be expressed as:
+            </p>
+            <p class="equation">$S_0=\pi \text{(}\frac{l}{2}\text{)}^2=\frac{\pi}{4}l^2$ </p>
+            <p>The amount of bacterium in inhibition zone can be expressed by multiplying bacteria concentrate of
+                inhibition zone method $c_0$ by area of inhibition zone.</p>
+            <p class="equation">$n_{bac}=c_0S_0=\frac{\pi c_0}{4}l^2$ </p>
+            <p class="equation">$c_0=10^7cm^{-2}$ </p>
+            <p>Total amount of PhaP-AMPs is equal to sum of the left part in inhibition zone and the consumption
+                part for bacteria in inhibition zone. </p>
+            <p class="equation">$v_0c_x=c_{MIC}S_0h+n_{bac}\alpha $ </p>
+            <p>Volume of a drop solution: $v_0=0.05ml$ Height of solution: $h=0.01cm$ </p>
+            <p>Titer of PhaP-AMPs (consumption quality of PhaP-AMPs per bacteria): $\alpha =\frac{\varDelta
+                n_{Pr}}{n_{bac}}$ </p>
+            <p>Integrate these equation above, we can find the relationship between diameter of inhibition zone and
+                PhaP-AMPs concentration. And we can get titer of PhaP-AMPs.</p>
+            <p class="equation">$l^2=\frac{4v_0}{\pi \text{(}c_{MIC}h+c_0\alpha \text{)}}c_x$ </p>
+            <div class="model-img-wrapper"><img class="text-img-middle" src="https://2020.igem.org/wiki/images/0/05/T--NWU-CHINA-A--model-figure_4-1.png"><span class="model-img-label">Figure 4-1
+                    fitting of Antibacterial effect</span></div>
+            <table class="text-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th> Description</th>
+                    <th> Value</th>
+                    <th> Unite</th>
+                    <th> Reference</th>
+                </tr>
+                <tr>
+                    <th>$a_p$
+                    </th>
+                    <th>
+                        Promoter activity</th>
+                    <th> 1.29</th>
+                    <th> $molecules/s$</th>
+                    <th> U. Alon.,2007</th>
+                </tr>
+                <tr>
+                    <th>$r_m$
+
+                    </th>
+                    <th>Degradation rate of mRNA</th>
+                    <th> 0.16</th>
+                    <th>$molecules/s$</th>
+                    <th>U. Alon.,2007</th>
+                </tr>
+                <tr>
+                    <th>$b_p$
+
+                    </th>
+                    <th>Average translation rate</th>
+                    <th> 6</th>
+                    <th>$molecules/s$</th>
+                    <th>U. Alon.,2007</th>
+                </tr>
+                <tr>
+                    <th>$r_p$ </th>
+                    <th>Degradation rate of Protein</th>
+                    <th>3.334e-4</th>
+                    <th>$molecules/s$</th>
+                    <th>U. Alon.,2007</th>
+                </tr>
+                <tr>
+                    <th>$\mu _m$ </th>
+                    <th>Maximum specific growth rate</th>
+                    <th>1.4705e-4</th>
+                    <th>$s^{-1}$</th>
+                    <th>[2]</th>
+                </tr>
+                <tr>
+                    <th>$K_S$ </th>
+                    <th>Half-velocity constant</th>
+                    <th>0.0149</th>
+                    <th>$g/L$</th>
+                    <th>[2]</th>
+                </tr>
+                <tr>
+                    <th>$m$ </th>
+                    <th>Substrate maintenance constant</th>
+                    <th>2.3333e-6</th>
+                    <th>$s^{-1}$</th>
+                    <th>[2]</th>
+                </tr>
+                <tr>
+                    <th>$Y^*_{\frac{X}{S}}$
+
+                    </th>
+                    <th>Growth yield coefficient</th>
+                    <th>0.4297</th>
+                    <th>$g*g^{-1}$</th>
+                    <th>[2]</th>
+                </tr>
+                <tr>
+                    <th>$Y_{\frac{P}{S}}$</th>
+                    <th>Product yield coefficient</th>
+                    <th>192.1599</th>
+                    <th>$g*g^{-1}$</th>
+                    <th>[2]</th>
+                </tr>
+            </table>
+        </div>
+        <div class="text-subsection">
+            <h1 class="sector-title">Reference</h1>
+            <p>[1] Zelić B, Vasić-Racki D, Wandrey C, Takors R. Modeling of the pyruvate production with Escherichia
+                coli in a fed-batch bioreactor. Bioprocess Biosyst Eng. 2004 Jul;26(4):249-58. doi:
+                10.1007/s00449-004-0358-0. Epub 2004 Apr 15. PMID: 15085423.</p>
+            <p>[2] 马晓轩. 基因重组大肠杆菌高密度发酵生产类人胶原蛋白及其分离纯化[D].西北大学,2006.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<!--网页占位部分-->
+<div class="clearspace"></div>
+</body>

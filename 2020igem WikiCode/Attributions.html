@@ -1,0 +1,537 @@
+{{NWU-CHINA-A/style-basic}}
+<!--************************************************************Text Page*********************************************************************-->
+<html>
+</head>
+<link rel="stylesheet" type="text/css"
+    href="https://2020.igem.org/wiki/index.php?title=Template:NWU-CHINA-A/text_CSS&action=raw&ctype=text/css" />
+<style>
+    .text-banner {
+        position: relative;
+        width: 100%;
+        height: 652px;
+        padding-bottom: 50px;
+        background-image: url(https://2020.igem.org/wiki/images/6/6e/T--NWU-CHINA-A--teammember_banner.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center;
+        background-color: rgb(251, 252, 255);
+    }
+
+    .banner-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        height: 4.5rem;
+        margin: -3.8rem 0 0 -300px;
+        text-align: center;
+        font-family: "a Atmospheric";
+        font-size: 4.5rem;
+        color: rgb(45, 56, 50);
+    }
+
+    .text-wrapper {
+        display: block;
+        margin: 0;
+        padding: 80px 0 100px 0;
+        background-image: url(https://2020.igem.org/wiki/images/4/41/T--NWU-CHINA-A--description_bg.gif);
+        z-index: -1;
+    }
+
+    .text-sector {}
+
+    .text-subsection {
+        position: relative;
+        margin: 0px 7% 80px 7%;
+        padding: 50px 50px 120px 50px;
+        font-size: 1.12rem !important;
+        box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .15) !important;
+        border-radius: 20px;
+        z-index: 1001;
+    }
+
+    .text-bg {
+        position: absolute;
+        font-size: 1.12rem !important;
+        /*box-shadow: 0 .3rem .5rem rgba(0,0,0,.15)!important;*/
+        /*background-color: #8fd0f7;*/
+        background-color: #fff;
+        border-radius: 20px;
+        opacity: 0.75;
+        z-index: 1000;
+    }
+
+    .text-sector,
+    p {
+        font-family: Opensans;
+        font-size: 1.125rem !important;
+        font-weight: 530 !important;
+    }
+
+    .sector-title {
+        display: block;
+        margin: 30px 0;
+        font-size: 2rem;
+        font-weight: 1000;
+        color: ;
+    }
+
+    .title-indicator {
+        position: fixed;
+        top: 96px;
+        left: 4%;
+        width: 180px;
+        margin: 200px auto auto 0%;
+        padding: 15px 20px 15px 20px !important;
+        background-color: #fff;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        border-radius: 7px;
+    }
+
+    .indicator-title {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 330;
+        padding: 10px 0 10px 16px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .indicator-title-current {
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .15) !important;
+    }
+
+    .indicator-banner-title {
+        margin-bottom: 1.6rem;
+        padding-left: 5px;
+        font-size: 1.4rem;
+        font-weight: 800;
+        user-select: none;
+    }
+
+    .clearspace {
+        height: 300px;
+        width: 100%;
+    }
+
+
+
+
+
+    /*Attributions*/
+    .attributions-form {
+        display: block;
+        width: 60%;
+        margin: 25px auto;
+        background-image: url("");
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        z-index: 1 !important;
+    }
+
+    .attributions-left {
+        margin: 0 auto;
+        width: 75%px;
+        border-right: #000;
+    }
+
+    .attributors-name {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+
+
+    .attributors-text {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    .attributors-wrapper {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        margin: 20px auto;
+        width: 100%;
+        height: 140px;
+    }
+
+    .attributors-text-wrapper {
+        display: block;
+        margin: auto 0;
+        width: 70%;
+    }
+
+    .attributors-image {
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        margin: 10px 20px;
+        border-radius: 60px;
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        //获取屏幕长宽
+        if (window.innerHeight) {
+            screenHeight = window.innerHeight;
+        } else {
+            //IE
+            screenHeight = window.clientHeight;
+        }
+        if (window.innerWidth) {
+            screenWidth = window.innerWidth;
+        } else {
+            //IE
+            screenWidth = window.clientWidth;
+        };
+        //top-banner高度设置
+        $(".text-banner").css("height", screenHeight - 96 + "px");
+        //设置文字蒙版位置
+        var count4 = 0;
+        $(".text-subsection").each(function () {
+            count4++;
+            $(this).attr("id", "text-subsetion" + count4);
+            $(this).after("<div class=\"text-bg\" id=\"text-bg" + count4 + "\"></div>");
+        });
+        var tsYaxis = new Array();
+        var tsLeft = new Array();
+        var tsWidth = new Array();
+        var tsHeight = new Array();
+        for (i = 1; i <= count4; i++) {
+            tsYaxis[i] = $("#text-subsetion" + i).offset().top;
+            tsLeft[i] = $("#text-subsetion" + i).offset().left;
+            tsWidth[i] = parseInt($("#text-subsetion" + i).css("width")) + parseInt($("#text-subsetion" + i).css("padding-left")) + parseInt($("#text-subsetion" + i).css("padding-right"));
+            tsHeight[i] = parseInt($("#text-subsetion" + i).css("height")) + parseInt($("#text-subsetion" + i).css("padding-top")) + parseInt($("#text-subsetion" + i).css("padding-bottom"));
+            $("#text-bg" + i).css("left", tsLeft[i] + "px");
+            $("#text-bg" + i).css("top", tsYaxis[i] - 16 + "px");
+            $("#text-bg" + i).css("width", tsWidth[i] + "px");
+            $("#text-bg" + i).css("height", tsHeight[i] + "px");
+        };
+        $(window).scroll(function () {//若选取body则会因高度为100%无法触发事件
+            for (i = 1; i <= count4; i++) {
+                tsYaxis[i] = $("#text-subsetion" + i).offset().top;
+                tsLeft[i] = $("#text-subsetion" + i).offset().left;
+                tsWidth[i] = parseInt($("#text-subsetion" + i).css("width")) + parseInt($("#text-subsetion" + i).css("padding-left")) + parseInt($("#text-subsetion" + i).css("padding-right"));
+                tsHeight[i] = parseInt($("#text-subsetion" + i).css("height")) + parseInt($("#text-subsetion" + i).css("padding-top")) + parseInt($("#text-subsetion" + i).css("padding-bottom"));
+                $("#text-bg" + i).css("left", tsLeft[i] + "px");
+                $("#text-bg" + i).css("top", tsYaxis[i] - 16 + "px");
+                $("#text-bg" + i).css("width", tsWidth[i] + "px");
+                $("#text-bg" + i).css("height", tsHeight[i] + "px");
+            };
+        });
+        //获取文档长度
+        htmlHeight = $("body").css("height").slice(0, 4);
+        htmlHeight = parseInt(htmlHeight);
+        Yaxis = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+
+        //top-banner高度设置
+        $(".top-banner").css("height", screenHeight - 96 + "px");
+
+        //背景图片位置控制
+        Yaxis = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+        tbHeight = parseInt($(".text-banner").css("height"));
+        tbRatio = Yaxis * 0.5 - 4 + "px";
+        $(".text-banner").css("background-position", "center " + tbRatio);
+        $(window).scroll(function () {//若选取.globalwrapper则会因高度为100%无法触发事件
+            Yaxis = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+            tbHeight = parseInt($(".text-banner").css("height"));
+            tbRatio = Yaxis * 0.5 - 4 + "px";
+            $(".text-banner").css("background-position", "center " + tbRatio);
+            //console.log("center "+tbRatio);
+        });
+
+
+        //点击跳转
+        var scrollTitle = function (e) {
+            console.log(e.target);
+            var mark = $(e.target).attr("id").slice(15, 16);
+            mark = parseInt(mark);
+            window.scrollTo({ top: titleYaxis[mark] - 95, behavior: "smooth" });
+        };
+
+        /*for(var i=1;i<=title.length;i++){
+            clickedTitle=$("#indicator-title"+i);
+            clickedTitle.on("click",function(e){scrollTitle(e);});
+        };*/
+
+        /*设置表格样式*/
+        $(".attributions-form").css("width", $(".text-subsection").width() * 0.8 + "px");
+    })
+</script>
+<div class="text-banner">
+    <span class="banner-title">Attributions</span>
+</div>
+<div class="text-wrapper">
+    <!--<div class="title-indicator"></div>-->
+    <div class="text-sector">
+        <div class="text-subsection">
+            <h1 class="sector-title">Overview</h1>
+            <p>The iGEM 2020 NWU-CHINA-A team is a family composed of many members, such as art group, experiment
+                group, modeling group and webpage group. On this page, you can learn about everyone who contributed
+                to our project. We would like to thank all the team advisors and teachers who helped us in this
+                project. Besides, we would like to thank teams from other schools who helped us and gave us very
+                useful suggestions. Finally, we would like to thank all the companies, schools and people from all
+                walks of life who have supported us.</p>
+            <hi class="sector-title">Individual attribution</hi>
+            <img src="https://2020.igem.org/wiki/images/c/cc/T--NWU-CHINA-A--attributions_form.png" class="attributions-form">
+        </div>
+
+        <div class="text-subsection">
+            <div class="attributions-left">
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/9/9f/T--NWU-CHINA-A--WDX.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Daixu Wei</span>
+                        <div class="attributors-text">Mr. Wei played a key role in our team and gave us many
+                            professional suggestions and supports. He is a humorous teacher who often communicates
+                            with
+                            us and leads us to come up with solutions to many problems that we can't overcome.</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/a/ab/T--NWU-CHINA-A--Fan_Mingqin%28256%29.png);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Mingqin Fan</span>
+                        <div class="attributors-text">Teacher Fan helped us a lot. He often cares about the progress
+                            of
+                            the project. If we encounter problems that are difficult to communicate with others, we
+                            will
+                            turn to him.</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/5/5f/T--NWU-CHINA-A--wujiawei.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Jiawei Wu</span>
+                        <div class="attributors-text">He helped us to tacke the cost of team registry fee.</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/2/2e/T--NWU-CHINA-A--chenlin.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Lin Chen</span>
+                        <div class="attributors-text">Instructed our experiment, provided us with Staphylococcus
+                            aureus
+                            strain RN4220, and lent us an instrument used in the experiment.</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/4/4f/T--NWU-CHINA-A--wangshiwei%28256%29.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Professor Shiwei Wang</span>
+                        <div class="attributors-text">Provided us with experimental instruments.</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/e/e2/T--NWU-CHINA-A--lihongmin.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Professor Hongmin Li</span>
+                        <div class="attributors-text">Instructed our experiment.</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/0/0c/T--NWU-CHINA-A--guanfeng.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Professor Feng Guan</span>
+                        <div class="attributors-text">Provided us with experimental instruments</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/c/cb/T--NWU-CHINA-A--zhaoxiaohong.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Xiaohong Zhao</span>
+                        <div class="attributors-text">Experimental advisor</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/5/5f/T--NWU-CHINA-A--pengxuelaing.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Xueliang Peng</span>
+                        <div class="attributors-text">Experimental advisor</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/2/2a/T--NWU-CHINA-A--gonghailun.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Hailun Gong</span>
+                        <div class="attributors-text">Experimental advisor</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/4/42/T--NWU-CHINA-A--lianghaihua.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Haihua Liang</span>
+                        <div class="attributors-text">Provided us with experimental instruments</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/f/f9/T--NWU-CHINA-A--liuzhuolin%28256%29.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Zhuolin Liu</span>
+                        <div class="attributors-text">The modeling advisor of our team, as the senior of the
+                            previous
+                            iGEM team modeling team, he is an experienced iGEMer and gave many suggestions on
+                            our
+                            modeling process.</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/c/ce/T--NWU-CHINA-A--jack.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Junjie Zhu</span>
+                        <div class="attributors-text">The experimental advisor of our team who has participated
+                            in
+                            the
+                            iGEM competitions in 2016, 2017 and 2018, and shared many valuable experiences with
+                            us
+                            and
+                            answered many of our problems.</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image" style="background-image: url("");"></div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Jiabao Li</span>
+                        <div class="attributors-text">He is an ambassador of CCiC who provided us with zoom
+                            account
+                            to
+                            helped us prepare for Shaanxi iGEM Meetup</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/c/cf/T--NWU-CHINA-A--liyang.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Yang Li</span>
+                        <div class="attributors-text">She is the head of biochemical technology department who
+                            provided
+                            us some suggestions on how to implete our project from laboratory to the public.
+                        </div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/2/24/T--NWU-CHINA-A--zhaoliang.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Dr. Liang Zhao</span>
+                        <div class="attributors-text">He gave some suggestions on how to industrialize our
+                            project.
+                        </div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/3/30/T--NWU-CHINA-A--hanjing%28256%29.jpg);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Professor Jing Han</span>
+                        <div class="attributors-text">Her article inspired us to conceive our project and
+                            answered
+                            many
+                            questions we encountered during the experiment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="text-subsection">
+            <h1 class="sector-title">Exchange meeting</h1>
+            <p>In The 4th Southern China Regional Online Meeting, we learned about changes in competition
+                rules
+                and award criteria because of the epidemic, and sought experience from seniors who
+                participated
+                in the competition in previous years. In the Eastern China iGEM Meetup, we conducted the
+                first
+                project show and received suggestions from various teams. In Shaanxi iGEM Meetup, we set the
+                future cooperation direction with other teams. In Friend Team Meetup, we communicated the
+                experimental process with many teams that also do AMP related projects. In the 7th
+                Conference of
+                China iGEMer Meetup, we had the honor to communicate with more teams.</p>
+            <div class="attributions-left">
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/a/a5/T--NWU-CHINA-A--szpt-logo.png);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">SZPT-CHINA</span>
+                        <div class="attributors-text">They are our partners and have had many exchanges with
+                            us.
+                            We communicated and got useful advice from each other during the whole process.
+                            Besides,
+                            we held a lecture together to let more people to know our projects and promote
+                            synthetic
+                            biology.</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/6/6f/T--NWU-CHINA-A--nwu-china-b-logo.png);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">NWU-CHINA-B</span>
+                        <div class="attributors-text">We mentored them and gave them many useful advice.</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image"
+                        style="background-image: url(https://2020.igem.org/wiki/images/7/72/T--NWU-CHINA-A--xjtu_logo%28256%29.png);">
+                    </div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">XJTU-CHINA</span>
+                        <div class="attributors-text">Partnership</div>
+                    </div>
+                </div>
+                <div class="attributors-wrapper">
+                    <div class="attributors-image" style="background-image: url(https://2020.igem.org/wiki/images/6/66/T--NWU-CHINA-A--snapgenelogodark.png);background-size: 100% auto;background-repeat: no-repeat;"></div>
+                    <div class="attributors-text-wrapper">
+                        <span class="attributors-name">Snapgene GenScript</span>
+                        <div class="attributors-text">Sponsor: Snapgene GenScript</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--网页占位部分-->
+<div class="clearspace"></div>
+</body>

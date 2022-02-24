@@ -1,0 +1,297 @@
+{{NWU-CHINA-A/style-basic}}
+
+<!--************************************************************Text Page*********************************************************************-->
+<html>
+</head>
+<link rel="stylesheet" type="text/css"
+    href="https://2020.igem.org/wiki/index.php?title=Template:NWU-CHINA-A/text_CSS&action=raw&ctype=text/css" />
+<style>
+    .text-banner {
+        position: relative;
+        width: 100%;
+        height: 652px;
+        padding-bottom: 50px;
+        background-image: url(https://2020.igem.org/wiki/images/8/89/T--NWU-CHINA-A--notebook-banner-img.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center;
+        background-color: rgb(251, 252, 255);
+    }
+
+    .banner-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 4.5rem;
+        margin: -3rem 0 0 -50%;
+        text-align: center;
+        font-family: "a Atmospheric";
+        font-size: 4.5rem;
+        color: rgb(56, 50, 45);
+    }
+
+    .text-wrapper {
+        display: block;
+        margin: 0;
+        padding: 80px 0 100px 0;
+        background-image: url(https://2020.igem.org/wiki/images/4/41/T--NWU-CHINA-A--description_bg.gif);
+        z-index: -1;
+    }
+
+    .text-sector {}
+
+    .text-subsection {
+        position: relative;
+        margin: 0px 7% 80px 7%;
+        padding: 50px 50px 120px 50px;
+        font-size: 1.12rem !important;
+        box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .15) !important;
+        border-radius: 20px;
+        z-index: 1001;
+    }
+
+    .text-bg {
+        position: absolute;
+        font-size: 1.12rem !important;
+        /*box-shadow: 0 .3rem .5rem rgba(0,0,0,.15)!important;*/
+        /*background-color: #8fd0f7;*/
+        background-color: #fff;
+        border-radius: 20px;
+        opacity: 0.75;
+        z-index: 1000;
+    }
+
+    .text-sector,
+    p {
+        font-size: 1.125rem !important;
+        font-weight: 530 !important;
+    }
+
+    .sector-title {
+        margin: 30px 0;
+        font-size: 2rem;
+        font-weight: 1000;
+        color: ;
+    }
+
+    .title-indicator {
+        position: fixed;
+        top: 96px;
+        left: 4%;
+        width: 180px;
+        margin: 200px auto auto 0%;
+        padding: 15px 20px 15px 20px !important;
+        background-color: #fff;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        border-radius: 7px;
+    }
+
+    .indicator-title {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 330;
+        padding: 10px 0 10px 16px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .indicator-title-current {
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .15) !important;
+    }
+
+    .indicator-banner-title {
+        margin-bottom: 1.6rem;
+        padding-left: 5px;
+        font-size: 1.4rem;
+        font-weight: 800;
+        user-select: none;
+    }
+
+    .clearspace {
+        height: 300px;
+        width: 100%;
+    }
+
+
+
+
+
+    /*Attributions*/
+    .attributions-form {
+        display: block;
+        height: 515px;
+        margin: 25px auto;
+        background-image: url("https://2020.igem.org/wiki/images/c/cc/T--NWU-CHINA-A--attributions_form.png");
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        z-index: 1 !important;
+    }
+
+    .attributions-left {
+        margin: 0 auto;
+        width: 90%;
+        border-right: #000;
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        grid-template-rows: 140px 140px 140px;
+    }
+
+    .attributors-name {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+
+
+    .attributors-text {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    .attributors-wrapper {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        margin: 20px auto;
+        width: 100%;
+        height: 140px;
+    }
+
+    #member-wrapper {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 140px 140px 140px;
+    }
+
+    .attributors-text-wrapper {
+        display: block;
+        margin: auto 0;
+        width: 50%;
+    }
+
+    .attributors-image {
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        margin: 10px 20px;
+        border-radius: 60px;
+        background-size: 100% auto;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    #leader:before {
+        content: "\2605";
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        //获取屏幕长宽
+        if (window.innerHeight) {
+            screenHeight = window.innerHeight;
+        } else {
+            //IE
+            screenHeight = window.clientHeight;
+        }
+        if (window.innerWidth) {
+            screenWidth = window.innerWidth;
+        } else {
+            //IE
+            screenWidth = window.clientWidth;
+        };
+        //top-banner高度设置
+        $(".text-banner").css("height", screenHeight - 96 + "px");
+        //设置文字蒙版位置
+        var count4 = 0;
+        $(".text-subsection").each(function () {
+            count4++;
+            $(this).attr("id", "text-subsetion" + count4);
+            $(this).after("<div class=\"text-bg\" id=\"text-bg" + count4 + "\"></div>");
+        });
+        var tsYaxis = new Array();
+        var tsLeft = new Array();
+        var tsWidth = new Array();
+        var tsHeight = new Array();
+        for (i = 1; i <= count4; i++) {
+            tsYaxis[i] = $("#text-subsetion" + i).offset().top;
+            tsLeft[i] = $("#text-subsetion" + i).offset().left;
+            tsWidth[i] = parseInt($("#text-subsetion" + i).css("width")) + parseInt($("#text-subsetion" + i).css("padding-left")) + parseInt($("#text-subsetion" + i).css("padding-right"));
+            tsHeight[i] = parseInt($("#text-subsetion" + i).css("height")) + parseInt($("#text-subsetion" + i).css("padding-top")) + parseInt($("#text-subsetion" + i).css("padding-bottom"));
+            $("#text-bg" + i).css("left", tsLeft[i] + "px");
+            $("#text-bg" + i).css("top", tsYaxis[i] - 16 + "px");
+            $("#text-bg" + i).css("width", tsWidth[i] + "px");
+            $("#text-bg" + i).css("height", tsHeight[i] + "px");
+        };
+        $(window).scroll(function () {//若选取body则会因高度为100%无法触发事件
+            for (i = 1; i <= count4; i++) {
+                tsYaxis[i] = $("#text-subsetion" + i).offset().top;
+                tsLeft[i] = $("#text-subsetion" + i).offset().left;
+                tsWidth[i] = parseInt($("#text-subsetion" + i).css("width")) + parseInt($("#text-subsetion" + i).css("padding-left")) + parseInt($("#text-subsetion" + i).css("padding-right"));
+                tsHeight[i] = parseInt($("#text-subsetion" + i).css("height")) + parseInt($("#text-subsetion" + i).css("padding-top")) + parseInt($("#text-subsetion" + i).css("padding-bottom"));
+                $("#text-bg" + i).css("left", tsLeft[i] + "px");
+                $("#text-bg" + i).css("top", tsYaxis[i] - 16 + "px");
+                $("#text-bg" + i).css("width", tsWidth[i] + "px");
+                $("#text-bg" + i).css("height", tsHeight[i] + "px");
+            };
+        });
+        //获取文档长度
+        htmlHeight = $("body").css("height").slice(0, 4);
+        htmlHeight = parseInt(htmlHeight);
+        Yaxis = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+
+        //top-banner高度设置
+        $(".top-banner").css("height", screenHeight - 96 + "px");
+
+        //背景图片位置控制
+        Yaxis = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+        tbHeight = parseInt($(".text-banner").css("height"));
+        tbRatio = Yaxis * 0.5 - 4 + "px";
+        $(".text-banner").css("background-position", "center " + tbRatio);
+        $(window).scroll(function () {//若选取.globalwrapper则会因高度为100%无法触发事件
+            Yaxis = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;//获取scroll位置
+            tbHeight = parseInt($(".text-banner").css("height"));
+            tbRatio = Yaxis * 0.5 - 4 + "px";
+            $(".text-banner").css("background-position", "center " + tbRatio);
+            //console.log("center "+tbRatio);
+        });
+
+
+        //点击跳转
+        var scrollTitle = function (e) {
+            console.log(e.target);
+            var mark = $(e.target).attr("id").slice(15, 16);
+            mark = parseInt(mark);
+            window.scrollTo({ top: titleYaxis[mark] - 95, behavior: "smooth" });
+        };
+
+        /*for(var i=1;i<=title.length;i++){
+            clickedTitle=$("#indicator-title"+i);
+            clickedTitle.on("click",function(e){scrollTitle(e);});
+        };*/
+
+        /*设置表格样式*/
+        $(".attributions-form").css("width", $(".text-subsection").width() * 0.8 + "px");
+    })
+</script>
+<div class="text-banner">
+    <span class="banner-title">Protocols</span>
+</div>
+<div class="text-wrapper">
+    <!--<div class="title-indicator"></div>-->
+    <div class="text-sector">
+        <div class="text-subsection" style="">
+            <embed src="https://2020.igem.org/wiki/images/d/d6/T--NWU-CHINA-A--protocols.pdf" type="application/pdf"
+                width="100%" height="800px" internalinstanceid="81" />
+        </div>
+    </div>
+
+
+    <!--网页占位部分-->
+    <div class="clearspace"></div>
+</body>
